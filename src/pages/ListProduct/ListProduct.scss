@@ -1,0 +1,28 @@
+@use '../../styles/' as * ;
+.wrapper {
+
+}
+.title{
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.ant-table-cell{
+    max-width: 200px;
+}
+
+.wrapper-header{
+    
+}
+.btn-add{
+    margin-bottom: 20px;
+    text-align: right;
+
+}
+.icon-loading{
+    @include flex(center,center);
+    height: 100vh;
+    font-size: 30px;
+}

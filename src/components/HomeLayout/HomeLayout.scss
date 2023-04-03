@@ -1,0 +1,45 @@
+@use '../../styles/' as *;
+.layout{
+  position: relative;
+  &__tag{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    @include flex(space-between,center);
+    &__item{
+      padding: 5px 10px;
+      border-radius: 10px;
+    }
+    h2{
+      color: #444;
+      font-weight: 600;
+      font-size: 22px;
+    }
+  }
+}
+
+.site-layout-content {
+
+     
+  }
+  #components-layout-demo-top .logo {
+    float: left;
+    width: 120px;
+    height: 31px;
+    margin: 16px 24px 16px 0;
+    background: rgba(255, 255, 255, 0.3);
+  }
+  .ant-row-rtl #components-layout-demo-top .logo {
+    float: right;
+    margin: 16px 0 16px 24px;
+  }
+
+h1{
+  @include responsive(mobie){
+    color: yellow;
+  }
+  @include responsive(tablet){
+    color: red;
+  }
+
+}
+

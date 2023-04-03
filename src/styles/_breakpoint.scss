@@ -1,0 +1,26 @@
+@mixin responsive($breakpoint){
+     @if $breakpoint == mobie{
+          @media (max-width : 576px) {
+              @content
+          }
+     }
+     @else if $breakpoint == tablet{
+          @media (min-width: 576px) and (max-width:768px) {
+                  @content
+          }   
+     }
+  }
+
+$breakpoint : (
+     "sx": 576px,
+    "sm": 577px,
+    "md": 768px
+);
+// @mixin responsive-map($breakpoint){
+//      @if map-has-key($breakpoint , $breakpoint){
+//           @media (max-width : map-get($breakpoint,$breakpoint)) {
+//                @content
+//           }
+
+//      }
+// }

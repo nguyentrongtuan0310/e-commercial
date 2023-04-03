@@ -1,0 +1,184 @@
+@use "../../../styles/" as *;
+
+.header {
+    @include flex(unset, center);
+    height: 100%;
+    width: 1200px;
+    margin: 0 auto;
+    &__service{
+        display: flex;
+        cursor: pointer;
+        align-items: center;
+        color: #fff;
+        margin-left: 10px;
+        padding: 4px 8px;
+        border-radius: 10px;
+        &:hover{
+            background: hsla(0,0%,100%,.2);
+        }
+        &__icon{
+            display: flex;
+            align-items: center;
+        }
+        &__title{
+            line-height: 1.4;
+            & p{
+                display: flex;
+                flex-direction: column;
+                 font-size: 12px;
+                margin-left: 2px;
+            }
+        }
+    }
+    &__search {
+        position: relative;
+        width: 300px;
+        display: flex;
+        border-radius: 5px;
+        overflow: hidden;
+        align-items: center;
+        &__icon {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 10px;
+            font-weight: bold;
+            font-size: 20px;
+            color: $text-color;
+        }
+        &__input {
+            width: 100%;
+            height: 34px;
+            border: none;
+            outline: none;
+            padding: 10px;
+            font-size: 16px;
+            color: #707070;
+        }
+    }
+    &__icon {
+        fill: none;
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        font-weight: bold;
+        &__wrapper {
+            line-height: 64px;
+            background: hsla(0, 0%, 100%, 0.2);
+            align-items: center;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            height: 42px;
+            padding: 7px 9px;
+            position: relative;
+            & > p{
+                color: #fff;
+                // font-weight: 400;
+                font-size: 12px;
+                margin-left: 4px;
+                display: block;
+            }
+           
+        }
+        &__text{
+            color: #fff;
+       
+            font-weight: 400;
+            margin-left: 4px;
+            line-height: 1.2;
+            
+            &__title{
+                line-height: 17.1px;
+                font-weight: 400;
+                font-size: 12px;
+                margin-left: 0;
+            }
+            &__adress{
+                font-size: 13px;
+                font-weight:500;
+
+                
+            }
+        }
+        &__wrapper  {
+            margin-right: 10px;
+        }
+    }
+    &__right {
+        display: flex;
+        align-items: center;
+        &__icon{
+            position: relative;
+
+            span{
+                cursor: pointer;
+                position: absolute;
+                top: -17px;
+                left: 9px;
+                color: #fff;
+                font-size: 12px;
+                font-weight: 500;
+
+        
+    
+            }
+        }
+        div {
+            display: flex;
+            align-items: center;
+            p {
+                color: #fff;
+                margin-left: 4px;
+                font-size: 14px;
+                font-weight: 600;
+            }
+        }
+        &__avatar {
+            margin-left: 10px;
+        }
+    }
+    &__content__popover {
+        // padding-left: 15px;
+        p {
+            color: #707070;
+            font-size: 15px;
+            font-weight: 400;
+            color: rgba(0, 0, 0, 0.87);
+            padding: 4px 0;
+            cursor: pointer;
+        }
+        &:hover {
+            color: #00bfa5;
+        }
+    }
+}
+
+.nav {
+    @include flex(unset, center);
+    &__item {
+        color: #fff;
+        padding: 12px;
+        font-size: 15px;
+        font-weight: 500;
+    }
+    &__logo {
+        @include flex(unset, center);
+        padding: 0 12px;
+        span {
+            color: #fff;
+            font-size: 24px;
+            // font-weight: 700;
+        }
+        img {
+            width: 160px;
+            height: 30px;
+            object-fit: cover;
+        }
+    }
+}
+.icon-cart {
+    // font-size: 30px;
+    color: #fff;
+}
