@@ -8,12 +8,16 @@ import { useSelector } from 'react-redux'
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import { Autoplay, Navigation } from 'swiper'
+
 const SaleProduct = () => {
     const data = useSelector(state =>state.products.products)
     const [day,setDay] = useState('')
     const [second,setSecond] = useState('')
     const [hour,setHour] = useState('')
     const [minute,setMinute] = useState('')
+    const navigationPrevRef = useRef(null)
+  const navigationNextRef = useRef(null)
     const date = new Date();
     useEffect(() =>{
 
@@ -55,23 +59,30 @@ const SaleProduct = () => {
         < SwiperComponent
           slidesPerView={5}
           spaceBetween={10}
-        //   pagination={{
-        //     clickable: true,
-        //   }}
-        //   modules={[Pagination]}
+            Pagination={{
+                clickable: true
+            }}
+           grabCursor={true}
+           autoplay={{
+             delay: 3000,
+             disableOnInteraction: false,
+           }}
+           
+           modules={[ Autoplay,Pagination]}
+    
           className={styles.mySwiper}>
        
 
            <div className={styles.list__product}>
                 {data.map((item,id) => (
                    
-                        <SwiperSlide style={{width: '100%'}}>
+                        <SwiperSlide style={{width: '100%',borderRadius: '10px'}}>
                             <CardItem item={item}/>
                         </SwiperSlide> 
               
                 ))}
            </div>
-         
+       
 
         </ SwiperComponent>
     </div>
