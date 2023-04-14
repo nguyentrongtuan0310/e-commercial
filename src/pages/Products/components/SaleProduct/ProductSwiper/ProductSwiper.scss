@@ -1,0 +1,40 @@
+
+
+.next-arrow,.prev-arrow{
+    cursor: pointer;
+    position: absolute;
+    border-radius: 50%;
+    align-items: center;
+    background: #fff;
+    box-shadow: 0 0 4px 0 rgba(0,0,0,.2);
+    display: flex;
+    font-size: 1.8rem;
+    height: 60px;
+    justify-content: center;
+    opacity: .8;
+    outline: none;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: .3s;
+    width: 60px;
+    z-index: 1;
+    .icon__prev,.icon__next{
+       
+        color: #3a3a3a;
+        font-size: 24px;
+        font-weight: 900;
+    }
+    .icon__next{
+        margin-right: 12px;
+    }
+    .icon__prev{
+        margin-left: 12px;
+    }
+}
+.next-arrow{
+    right: -25px;
+  
+}
+.prev-arrow{
+    left: -25px;
+}

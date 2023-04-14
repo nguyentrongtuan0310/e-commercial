@@ -11,7 +11,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate, useParams } from "react-router-dom";
 import productApi from "../../api/ProductApi/productApi";
-import useNotification from "../../components/hooks/useNotification";
+import useNotification from "../../hooks/useNotification";
 
 const cx = classNames.bind(style);
 const AddProduct = () => {
@@ -25,9 +25,18 @@ const AddProduct = () => {
       name: yup
         .string()
         .required("This field is required"),
-        // .test("test", "not is space ", (value) => {
-        //   return !/\s/.test(value);
-        // }),
+      price : yup
+      .string()
+      .required("This field is required"),
+      link: yup
+      .string()
+      .required("This field is required"),
+      priceOld : yup
+      .string()
+      .required("This field is required"),
+      description: yup
+      .string()
+      .required("This field is required"),
     
     })
     .required();
@@ -138,7 +147,10 @@ const AddProduct = () => {
         <h1 className={cx("title")}>Add Product</h1>
         <Form className={cx("form")} onFinish={handleSubmit(onSubmit)}>
           <Row gutter={16}>
-            <Col span={6}>
+            <Col  lg={{span: 6}}
+                  md={{span: 12}}
+                  sm={{span : 12}}
+                  xs={{span: 24}}  >
               <Form.Item
                 label="Name"
                 hasFeedback={!!errors.name?.message}
@@ -153,7 +165,10 @@ const AddProduct = () => {
                 />
               </Form.Item>
             </Col>
-            <Col span={6}>
+            <Col  lg={{span: 6}}
+                  md={{span: 12}}
+                  sm={{span : 12}}
+                  xs={{span: 24}} >
               <Form.Item
                 label="Price"
                 hasFeedback={!!errors.price?.message}
@@ -168,7 +183,10 @@ const AddProduct = () => {
                 />
               </Form.Item>
             </Col>
-            <Col span={6}>
+            <Col  lg={{span: 6}}
+                  md={{span: 12}}
+                  sm={{span : 12}}
+                  xs={{span: 24}} >
               <Form.Item
                 label="PriceOld"
                 hasFeedback={!!errors.priceOld?.message}
@@ -184,7 +202,10 @@ const AddProduct = () => {
                 />
               </Form.Item>
             </Col>
-            <Col span={6}>
+            <Col  lg={{span: 6}}
+                  md={{span: 12}}
+                  sm={{span : 12}}
+                  xs={{span: 24}} >
               <Form.Item
                 label="Link"
                 hasFeedback={!!errors.link?.message}

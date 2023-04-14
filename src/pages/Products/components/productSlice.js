@@ -21,14 +21,16 @@ export  const productSlice = createSlice({
     },
     extraReducers: {
         [fetchProduct.pending] : (state,aciton) => {
-            console.log('Pending');
+            state.isLoading = true
         },
         [fetchProduct.fulfilled] : (state,aciton) => {
+            state.isLoading = false
             state.products = aciton.payload
-            console.log('fulfilled');
+
         },
         [fetchProduct.rejected] : (state,aciton) => {
-            console.log('Rejected');
+            
+
         },
     }
 

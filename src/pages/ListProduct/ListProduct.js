@@ -7,6 +7,7 @@ import productApi from "../../api/ProductApi/productApi";
 import useNotification from "antd/es/notification/useNotification";
 import { LoadingOutlined } from "@ant-design/icons";
 
+
 const ListProduct = () => {
   const [data, setData] = useState([]);
   const [showLoading, setShowLoading] = useState(true);
@@ -68,7 +69,7 @@ const ListProduct = () => {
       setTimeout(() => {
         setShowLoading(false);
 
-      },2000)
+      },500)
       setData(res);
     } catch (error) {
       // setShowLoading(true);
@@ -123,35 +124,39 @@ const ListProduct = () => {
       ),
     },
   ];
-console.log(showLoading);
   return (
-    <>
-      {!showLoading? (
-        <div>
-          <div className="wrapper-header">
-            <h1 className={"title"}>List Product</h1>
-
-            <div className={"btn-add"}>
-              {" "}
-              <Button type="primary" onClick={() => navigate("/add")}>
-                Add New
-              </Button>
+   <div className="wrapper__listProduct">
+     
+        {!showLoading? (
+          <div>
+            <div className="wrapper-header">
+              <h1 className={"title"}>List Product</h1>
+  
+              <div className={"btn-add"}>
+                {" "}
+                <Button type="primary" onClick={() => navigate("/add")}>
+                  Add New
+                </Button>
+              </div>
             </div>
+  
+            <Table
+              columns={columns}
+              dataSource={data}
+              rowKey={(data) => data.id}
+            />
+            {contextHolder}
           </div>
+        ) : (
+          <div className="icon-loading">
+            <LoadingOutlined />{" "}
+          </div>
+        )}
+       
+     
+    
+   </div>
 
-          <Table
-            columns={columns}
-            dataSource={data}
-            rowKey={(data) => data.id}
-          />
-          {contextHolder}
-        </div>
-      ) : (
-        <div className="icon-loading">
-          <LoadingOutlined />{" "}
-        </div>
-      )}
-    </>
   );
 };
 

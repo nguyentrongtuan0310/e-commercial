@@ -25,11 +25,7 @@ export const LocationIcon = ({
     </g>
   </svg>
 );
-export const CartIcon = ({
-  width = "25px",
-  height = "25px",
-  className,
-}) => (
+export const CartIcon = ({ width = "25px", height = "25px", className }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 28.95 35.07"
@@ -42,11 +38,11 @@ export const CartIcon = ({
       <g id="Layer_1-2" data-name="Layer 1">
         <path
           d="M10,10.54V5.35A4.44,4.44,0,0,1,14.47.9h0a4.45,4.45,0,0,1,4.45,4.45v5.19"
-          class="cls-1"
+          className="cls-1"
         ></path>{" "}
         <path
           d="M23.47,34.17h-18A4.58,4.58,0,0,1,.91,29.24L2.5,8.78A1.44,1.44,0,0,1,3.94,7.46H25a1.43,1.43,0,0,1,1.43,1.32L28,29.24A4.57,4.57,0,0,1,23.47,34.17Z"
-          class="cls-1"
+          className="cls-1"
         ></path>
       </g>
     </g>
@@ -181,7 +177,7 @@ export const SadIcon = () => (
     role="img"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 496 512"
-    class="svg-inline--fa fa-frown"
+    className="svg-inline--fa fa-frown"
     data-v-108ccb56=""
   >
     <path
@@ -204,7 +200,7 @@ export const CartProcessIcon = ({ className }) => (
     role="img"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 576 512"
-    class="svg-inline--fa fa-shopping-cart"
+    className="svg-inline--fa fa-shopping-cart"
   >
     <path
       data-v-76247bda=""
@@ -322,8 +318,8 @@ export const HeartIconActive = ({ className }) => (
     viewBox="0 0 19.2 18.5"
     aria-hidden="true"
     focusable="false"
-    class="heart-full icon-svg icon-svg--color-cps"
     className={className}
+    // className="heart-full icon-svg icon-svg--color-cps"
   >
     <path
       fill="currentColor"
@@ -338,9 +334,154 @@ export const HeartIcon = ({ className }) => (
     viewBox="20 18 29 28"
     aria-hidden="true"
     focusable="false"
-    class="heart-border icon-svg icon-svg--color-cps"
     className={className}
   >
     <path d="M28.3 21.1a4.3 4.3 0 0 1 4.1 2.6 2.5 2.5 0 0 0 2.3 1.7c1 0 1.7-.6 2.2-1.7a3.7 3.7 0 0 1 3.7-2.6c2.7 0 5.2 2.7 5.3 5.8.2 4-5.4 11.2-9.3 15a2.8 2.8 0 0 1-2 1 3.4 3.4 0 0 1-2.2-1c-9.6-10-9.4-13.2-9.3-15 0-1 .6-5.8 5.2-5.8m0-3c-5.3 0-7.9 4.3-8.2 8.5-.2 3.2.4 7.2 10.2 17.4a6.3 6.3 0 0 0 4.3 1.9 5.7 5.7 0 0 0 4.1-1.9c1.1-1 10.6-10.7 10.3-17.3-.2-4.6-4-8.6-8.4-8.6a7.6 7.6 0 0 0-6 2.7 8.1 8.1 0 0 0-6.2-2.7z"></path>
+  </svg>
+);
+
+export const StarIcon = ({ className }) => (
+  <svg
+    height="15"
+    width="15"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 576 512"
+    className={className}
+  >
+    <path d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z"></path>
+  </svg>
+);
+export const NewsIcon = ({ className }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="20"
+    height="15"
+    viewBox="0 0 20 15"
+    className={className}
+  >
+    <path
+      id="newspaper"
+      d="M17.5,6.5V4H0V17.75A1.25,1.25,0,0,0,1.25,19H18.125A1.875,1.875,0,0,0,20,17.125V6.5ZM16.25,17.75h-15V5.25h15ZM2.5,7.75H15V9H2.5Zm7.5,2.5h5V11.5H10Zm0,2.5h5V14H10Zm0,2.5h3.75V16.5H10Zm-7.5-5H8.75V16.5H2.5Z"
+      transform="translate(0 -4)"
+      fill="#d70018"
+    ></path>
+  </svg>
+);
+export const CheckIcon = ({ className }) => (
+  <svg
+    height="26"
+    width="26"
+    aria-hidden="true"
+    focusable="false"
+    data-prefix="fas"
+    data-icon="check-circle"
+    role="img"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 512 512"
+    className={className}
+  >
+    <path
+      fill="currentColor"
+      d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
+    
+    ></path>
+  </svg>
+);
+export const UserIcon = ({ className }) => (
+  <svg
+    id="icon-smember"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 560 560"
+    width="20"
+    height="20"
+    className={className}
+  >
+    <g id="Layer_2" data-name="Layer 2">
+      <g id="Layer_1-2" data-name="Layer 1">
+        <circle cx="280" cy="280" r="265" className="cls-1"></circle>{" "}
+        <circle cx="280" cy="210" r="115" className="cls-1"></circle>{" "}
+        <path
+          d="M86.82,461.4C124.71,354.71,241.91,298.93,348.6,336.82A205,205,0,0,1,473.18,461.4"
+          className="cls-1"
+        ></path>
+      </g>
+    </g>
+  </svg>
+);
+export const HomeIcon = ({ className }) => (
+  <svg
+    width="25"
+    height="25"
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 17.71 17.72 "
+  >
+    {" "}
+    <g id="Layer_2" data-name="Layer 2">
+      <g id="Layer_1-2" data-name="Layer 1">
+        <path
+          d="M.54,9.09V8.63a2.26,2.26,0,0,1,.75-1.16Q4.38,4.39,7.46,1.3A2.35,2.35,0,0,1,8.63.54h.46a2.28,2.28,0,0,1,1.17.76l6.35,6.35.2.21a1.54,1.54,0,0,1-.88,2.5,4.56,4.56,0,0,1-.54,0v4.91a1.79,1.79,0,0,1-1.86,1.87H11.05c-.41,0-.59-.19-.59-.6,0-1.25,0-2.49,0-3.74A.82.82,0,0,0,9.56,12c-.46,0-.92,0-1.38,0a.86.86,0,0,0-.93.92c0,1.24,0,2.48,0,3.72a.52.52,0,0,1-.59.59H4.22a1.8,1.8,0,0,1-1.9-1.9V10.41l0,0H2A1.49,1.49,0,0,1,.71,9.55,2.54,2.54,0,0,1,.54,9.09Z"
+          className="cls-1"
+        ></path>
+      </g>
+    </g>
+  </svg>
+);
+export const StoreIcon = ({ className }) => (
+  <svg
+    width="25"
+    height="25"
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 17.71 17.72"
+  >
+    <g id="Layer_2" data-name="Layer 2">
+      <g id="Layer_1-2" data-name="Layer 1">
+        <path
+          d="M4.22,17.18a1.8,1.8,0,0,1-1.9-1.9V10.41l0,0H2A1.49,1.49,0,0,1,.71,9.55a2.54,2.54,0,0,1-.17-.46V8.63a2.26,2.26,0,0,1,.75-1.16Q4.38,4.39,7.46,1.3A2.35,2.35,0,0,1,8.63.54h.46a2.28,2.28,0,0,1,1.17.76l6.35,6.35.2.21a1.54,1.54,0,0,1-.88,2.5,4.56,4.56,0,0,1-.54,0v4.91a1.79,1.79,0,0,1-1.86,1.87Z"
+          class="cls-1"
+        ></path>
+        <polygon
+          points="6.11 7.04 11.61 7.04 11.61 8.97 10.94 8.15 7.21 8.15 7.21 8.88 8.87 10.68 6.11 9.53 6.11 7.04"
+          class="cls-2"
+        ></polygon>
+        <polygon
+          points="6.11 12.24 6.11 14.26 11.61 14.26 11.61 11.36 8.89 10.08 10.5 11.92 10.5 13.15 6.86 13.15 6.11 12.24"
+          class="cls-2"
+        ></polygon>
+      </g>
+    </g>
+  </svg>
+);
+export const ReadMoreIcon = ({ className }) => (
+  <svg
+    width="25"
+    height="25"
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 16.47 6.77"
+  >
+    <g id="Layer_2" data-name="Layer 2">
+      <g id="Layer_1-2" data-name="Layer 1">
+        <rect
+          x="0.5"
+          y="0.5"
+          width="15.47"
+          height="5.77"
+          rx="2.89"
+          className="cls-1"
+        ></rect>
+        <circle cx="4.76" cy="3.39" r="0.18" class="cls-2"></circle>
+        <circle cx="8.23" cy="3.39" r="0.18" class="cls-2"></circle>
+        <circle cx="11.71" cy="3.39" r="0.18" class="cls-2"></circle>
+      </g>
+    </g>
+  </svg>
+);
+export const BackIcon = ({ className }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"  width="26"
+  height="30"
+  className={className}>
+    <path d="M447.1 256C447.1 273.7 433.7 288 416 288H109.3l105.4 105.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448s-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L109.3 224H416C433.7 224 447.1 238.3 447.1 256z"></path>
   </svg>
 );

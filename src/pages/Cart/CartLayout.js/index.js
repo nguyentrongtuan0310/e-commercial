@@ -10,7 +10,8 @@ import styles from '../cart.module.scss'
 
 const CartLayout = ({children}) => {
    const [value ,setValue] = useState('TIẾN HÀNH ĐẶT HÀNG')
-   const data = useSelector(state => state.cart.listCart.item)
+   const users = JSON.parse(localStorage.getItem('users'))
+   const data = JSON.parse(localStorage.getItem('quanity')).data || []
  const navigate = useNavigate()
 const {payment} = useParams()
  const listPrice= useSelector(state => state.cart.listCart.totalPrice)
@@ -20,20 +21,26 @@ const {payment} = useParams()
 },0)
 
 const handleOrder = () => {
+  
    if(data.length > 0 ){
-    navigate('payment-info')
+    if(users){
+    navigate('/cart/payment')
+
+    }else{
+      navigate('/login')
+    }
    }
 }
   return (
     <Layout >
           <HeaderApp />
-            <Content className={styles.wrapper} >
+            <div className={styles.wrapper} >
                 <div className={styles.container} >
                             {children}
                    
                 </div >  
-              </Content>
-              <Footer className={styles.footer}>
+              </div>
+         
 
               <div className={styles.pay}>
                    <div className={styles.pay__title}>
@@ -41,9 +48,9 @@ const handleOrder = () => {
                       <p className={styles.pay__total__price}>{price}0.000 ₫</p>
                     </div>   
                     <button type='submit' className={styles.pay__btn__order} onClick={handleOrder}>{payment ? "TIẾP TỤC" : "TIẾN HÀNH ĐẶT HÀNG"}</button>
-                    <button className={styles.pay__btn__add} onClick={() => navigate('/home')}>CHỌN THÊM SẢN PHẨM KHÁC</button>
+                    <button className={styles.pay__btn__add} onClick={() => navigate('/')}>CHỌN THÊM SẢN PHẨM KHÁC</button>
               </div> 
-              </Footer>
+             
       </Layout>
 
   )

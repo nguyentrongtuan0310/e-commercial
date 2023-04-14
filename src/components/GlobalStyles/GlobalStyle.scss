@@ -15,6 +15,7 @@ html {
     font-size: 62.5%;
     overflow-x: hidden;
     color: $text-color;
+    scroll-behavior: smooth;
 
 }
 body {
@@ -26,12 +27,36 @@ body {
    
 }
 .ant-layout-header{
-
+  padding: 0 !important;
 }
 .ant-layout-content{
   width: 1200px;
   margin: 0 auto;
   overflow-x: hidden;
+  @include responsive(lg){
+    width: 100%;
+    padding: 0 12px;
+
+
+    
+  }
+  @include responsive(tablet){
+    width: 100%;
+    padding: 0 12px;
+    margin: 0 auto;
+
+
+    
+  }
+  @include responsive(mobie){
+    width: 100%;
+    padding: 0 12px;
+    margin: 0 auto;
+
+
+
+    
+}
 }
 // propver
 
@@ -76,8 +101,12 @@ body {
   .ant-radio:hover .ant-radio-inner {
     border-color: $primary-color ;
   }
+  .ant-form-item .ant-form-item-label >label{
+    min-width: 70px !important;
+  }
   .ant-form-item{
     margin-bottom: 8px;
+   
   }
   .ant-select-selector{
     height: 38px !important;
@@ -93,3 +122,13 @@ body {
 .ant-rate .ant-rate-star:not(:last-child) {
   margin-inline-end: 1px;
 }
+
+button{
+  cursor: pointer;
+}
+.ant-btn-default{
+  display: none !important;
+}
+// .ant-spin{
+//   height: 100vh;
+// }

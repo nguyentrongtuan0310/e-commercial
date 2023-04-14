@@ -2,13 +2,24 @@
 .sale {
     background: linear-gradient(rgb(255, 211, 145), rgb(255, 211, 145)) 0% 0% / cover;
     border-radius: 10px;
-    margin: 20px 0 15px;
+    margin: 25px 0 15px;
     min-height: 350px;
     padding: 2px;
     &__title {
         @include flex(space-between, center);
         padding: 10px 8px 0;
         width: 100%;
+        @include responsive(lg) {
+        @include flex(unset, center);
+        flex-direction: column;
+           
+        }
+        @include responsive(tablet) {
+        @include flex(unset, center);
+        flex-direction: column;
+        gap: 10;
+           
+        }
         &__countdown {
             @include flex(unset, unset);
             p {
@@ -52,5 +63,5 @@
 .mySwiper{
     margin-top: 20px;
     margin-bottom: 20px;
-    padding: 0 10px !important;
+    padding: 10px !important;
 }

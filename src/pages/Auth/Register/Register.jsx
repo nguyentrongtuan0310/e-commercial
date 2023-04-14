@@ -6,8 +6,9 @@ import { Controller, useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import * as yup from "yup";
-import imgLogin from '../../../img/login.png'
+
 import styles  from '../Login/login.module.scss'
+import useResize from '../../../hooks/useResize';
 
 
 const Login = () => {
@@ -82,13 +83,16 @@ const Login = () => {
 
   
   };
-
+const size = useResize()
   return (
       <Row align={'center'} className={styles.wrapper} justify={'center'} >
+        {size.width > 768 && (
         <Col span={12}>
         
-           <div className={styles.wrapper__img}> <img   src={imgLogin} alt='imgLogin'/></div >
+           <div className={styles.wrapper__img}> <img   src='assets/img/login.png' alt='register'/></div >
         </Col>
+
+        )}
           <Col span={12}  className={styles.content}>
           <h2 className={styles.wrapper__title}>Register Here</h2>
 
@@ -112,7 +116,6 @@ const Login = () => {
                 <Form.Item
                   label="Name"
                   name="name"
-                  style={{width: '100%',marginRight: '26px'}}
                   hasFeedback={!!errors.name?.message}
                   validateStatus={errors.name?.message ? "error" : "success"}
                   help={errors.name?.message}
@@ -120,9 +123,10 @@ const Login = () => {
                 >
                   <Controller 
                      name="name"
+                    
                      control={control}
                      rules={{ required: "Please input your name!" }}
-                     render={({ field }) => <Input value={field.value} {...field} />}
+                     render={({ field }) => <Input  value={field.value} {...field} />}
                   
                   />
                 
@@ -162,27 +166,30 @@ const Login = () => {
                 
                 </Form.Item>
             
-                <Form.Item
+                <Col
                   name="remember"
                   valuePropName="checked"
                   wrapperCol={{
                     offset: 8,
                     span: 16,
                   }}
+                  sm={{span: 16,  offset: 8 }}
+                  className={styles.content__remember}
                 >
                   <Checkbox>Remember password</Checkbox>
-                </Form.Item>
+                </Col>
             
-                <Form.Item
+                <Col
                   wrapperCol={{
                     offset: 8,
                     span: 16,
                   }}
+                  sm={{span: 16,  offset: 8, }} 
                 >
                   <Button type="primary" className={styles.form__btn} htmlType="submit">
                     Register
                   </Button>
-                </Form.Item>
+                </Col>
               </Form>
           </Col>
       </Row>

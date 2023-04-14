@@ -13,14 +13,14 @@ export const CartSlice = createSlice({
             }
     },
     reducers: {
-        countToatalItem  (state,action) {
+        countTotalItem : (state,action)  => {
             let data = [...state.listCart.item]
           
             if(data.length > 0){
              
                 const index = data.findIndex(product => product.id === action.payload.product.id)
                 if(index < 0){
-
+              
                     return {
                         ...state,
                         listCart: {
@@ -29,9 +29,12 @@ export const CartSlice = createSlice({
                             item: [...state.listCart.item,action.payload.product]
                         }
                        }
+                       
                 }
                
             }else {
+               
+                
                 return {
                     ...state,
                     listCart: {
@@ -125,8 +128,12 @@ export const CartSlice = createSlice({
             data.splice(action.payload.index,1)
             
             state.listCart.item = data
+          
              state.listCart.totalItem = data.length
-
+             localStorage.setItem('quanity',JSON.stringify({
+                 value: state.listCart.item.length,
+                   data:data
+                }))
              const index = totalPrice.findIndex(item => item.item.id === action.payload.id)
                 totalPrice.splice(index,1)
                 state.listCart.totalPrice = totalPrice
@@ -137,5 +144,5 @@ export const CartSlice = createSlice({
 
 })
 export const {actions, reducer} = CartSlice;
-export const {countToatalItem,priceTotalItem , priceDecreseTotalItem ,deleteCart} = actions
+export const {countTotalItem,priceTotalItem , priceDecreseTotalItem ,deleteCart} = actions
 export default reducer

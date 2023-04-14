@@ -2,30 +2,32 @@ import { Col, Row } from "antd";
 import { Footer } from "antd/es/layout/layout";
 import React from "react";
 import styles from "./FooterApp.module.scss";
-import pay1 from "../../../img/pay1.png";
-import pay2 from "../../../img/pay2.png";
-import pay3 from "../../../img/pay3.png";
-import pay4 from "../../../img/pay4.png";
-import pay5 from "../../../img/pay5.png";
-import pay6 from "../../../img/pay6.png";
-import pay7 from "../../../img/pay7.png";
-import youtube from "../../../img/youtube.png";
-import zalo from "../../../img/zalo.png";
-import fb from "../../../img/fb.png";
-import tiktok from "../../../img/tiktok.png";
-import istagram from "../../../img/istagram.png";
-import dt from "../../../img/dt.png";
-import dt1 from "../../../img/dt1.png";
-import schanel from "../../../img/schanel.png";
-import sforum from "../../../img/sforum.png";
-import sale from "../../../img/sale.png";
-import dmca from "../../../img/dmca.png";
-
+import pay1 from '../../../img/pay1.png'
+import pay2 from '../../../img/pay2.png'
+import pay3 from '../../../img/pay3.png'
+import pay4 from '../../../img/pay4.png'
+import pay5 from '../../../img/pay5.png'
+import pay6 from '../../../img/pay6.png'
+import pay7 from '../../../img/pay7.png'
+import fb from '../../../img/fb.png'
+import youtube from '../../../img/youtube.png'
+import instagram from '../../../img/instagram.png'
+import dt1 from '../../../img/dt1.png'
+import dt from '../../../img/dt.png'
+import dmca from '../../../img/dmca.png'
+import zalo from '../../../img/zalo.png'
+import sale from '../../../img/sale.png'
+import schanel from '../../../img/schanel.png'
+import sforum from '../../../img/sforum.png'
+import tiktok from '../../../img/tiktok.png'
 const FooterApp = () => {
   return (
     <Footer className={styles.footer}>
       <Row gutter={12} className={styles.footer__container}>
-        <Col span={6} className={styles.footer__content}>
+        <Col  lg={{span: 6}}
+              md={{span: 12}}
+              sm={{span : 12}}
+               className={styles.footer__content}>
           <div className={styles.box__suppost}>
             <p className={styles.title}>Tổng đài hỗ trợ miễn phí</p>
             <ul className={styles.title__list}>
@@ -81,7 +83,10 @@ const FooterApp = () => {
             </ul>
           </div>
         </Col>
-        <Col span={6} className={styles.info}>
+        <Col lg={{span: 6}}
+              md={{span: 12}}
+              sm={{span : 12}}
+               className={styles.info}>
           <p className={styles.title}>Thông tin mua và chính sách</p>
           <ul>
             <li>
@@ -121,7 +126,10 @@ const FooterApp = () => {
             </li>
           </ul>
         </Col>
-        <Col span={6} className={styles.info}>
+        <Col lg={{span: 6}}
+              md={{span: 12}}
+              sm={{span : 12}}
+               className={styles.info}>
           <p className={styles.title}>Dịch vụ và thông tin khác</p>
           <ul>
             <li>
@@ -149,17 +157,20 @@ const FooterApp = () => {
             </li>
           </ul>
         </Col>
-        <Col span={6} className={styles.connect}>
+        <Col lg={{span: 6}}
+              md={{span: 12}}
+              sm={{span : 12}}
+               className={styles.connect}>
           <p className={styles.title}>Kết nối với CellphoneS</p>
           <div className={styles.connect__social}>
             <a href="" className={styles.connect__social__logo}>
               <img src={youtube} alt="youtube" />
             </a>
             <a href="" className={styles.connect__social__logo}>
-              <img src={fb} alt="youtube" />
+              <img src={fb} alt="fb" />
             </a>
             <a href="" className={styles.connect__social__logo}>
-              <img src={istagram} alt="youtube" />
+              <img src={instagram} alt="instagram" />
             </a>
             <a href="" className={styles.connect__social__logo}>
               <img src={tiktok} alt="youtube" />
@@ -197,22 +208,30 @@ const FooterApp = () => {
       </Row>
       <div className={styles.footer__bottom}>
         <Row className={styles.footer__container}>
-          <Col span={6}>
+          <Col lg={{span: 6}}
+              md={{span: 12}}
+              sm={{span : 12}}>
             <p className={styles.footer__container__text}>Điện thoại - Điện thoại iPhone - Điện thoại iPhone 14</p>
             <p className={styles.footer__container__text}>iPhone 14 Pro 128GB – iPhone 14 Pro Max 128GB</p>
             <p className={styles.footer__container__text}>Điện thoại iPhone 12 – Điện thoại iPhone 13</p>
           </Col>
-          <Col span={6}>
+          <Col lg={{span: 6}}
+              md={{span: 12}}
+              sm={{span : 12}}>
             <p className={styles.footer__container__text}>Điện thoại Vivo – Điện thoại OPPO – Điện thoại Samsung</p>
             <p className={styles.footer__container__text}>Samsung S22 – Điện thoại Samsung S23 Ultra</p>
             <p className={styles.footer__container__text}>Samsung A13 – Samsung A23 5G – Samsung A33</p>
           </Col>
-          <Col span={6}>
+          <Col lg={{span: 6}}
+              md={{span: 12}}
+              sm={{span : 12}}>
             <p className={styles.footer__container__text}>Máy tính Laptop – Tivi – Tivi Samsung</p>
             <p className={styles.footer__container__text}>Laptop cũ giá rẻ – Laptop Acer – Laptop ASUS</p>
             <p className={styles.footer__container__text}>Máy tính để bàn – Màn hình máy tính</p>
           </Col>
-          <Col span={6}>
+          <Col lg={{span: 6}}
+              md={{span: 12}}
+              sm={{span : 12}}>
             <p className={styles.footer__container__text}>Robot hút bụi – Máy lọc không khí</p>
             <p className={styles.footer__container__text}>Robot hút bụi Xiaomi – Robot hút bụi Ecovas</p>
             <p className={styles.footer__container__text}>Máy hút bụi – Máy hút bụi cầm tay – Camera</p>

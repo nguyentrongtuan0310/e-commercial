@@ -1,15 +1,11 @@
 
-import { Button, Layout } from 'antd'
-import { Content, Footer } from 'antd/es/layout/layout'
-import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React, { useState } from 'react'
+import { useDispatch} from 'react-redux'
 import styles from "./cart.module.scss";
-
-import FooterApp from '../../components/HomeLayout/FooterApp/FooterApp'
-import HeaderApp from '../../components/HomeLayout/HeaderApp/HeaderApp'
 import { LeftOutlined } from '@ant-design/icons'
+import { useNavigate} from 'react-router-dom';
+
 import CartItem from './CartItem';
-import { Outlet, useLocation, useNavigate, useParams } from 'react-router-dom';
 import NoData from './NoData';
 import { deleteCart } from './CartSlice';
 import CartLayout from './CartLayout.js';
@@ -17,7 +13,9 @@ import CartLayout from './CartLayout.js';
 
 
 const Cart = () => {
-  const data = useSelector(state => state.cart.listCart.item)
+  const data = JSON.parse(localStorage.getItem('quanity'))?.data || []
+ const [status,setStatus] = useState(false)
+
  const dispatch = useDispatch()
  const navigate = useNavigate()
 
@@ -25,14 +23,15 @@ const Cart = () => {
   const deleteCartItem = (id) => {
     const index = data.findIndex(item => item.id === id)
        dispatch(deleteCart({index: index, id : id}))
+      setStatus(!status)
    }
-
+  
   return (
 
    
     <CartLayout>
       <span className={styles.title}>
-            <span className={styles.title__back} onClick={() => navigate('/home')}> <LeftOutlined className={styles.title__icon}/> Trở về</span>
+            <span className={styles.title__back} onClick={() => navigate('/')}> <LeftOutlined className={styles.title__icon}/> Trở về</span>
             <span className={styles.title__cart}>Giỏ hàng</span>
       </span>
       <ul className={styles.cart}>
@@ -42,7 +41,7 @@ const Cart = () => {
           <CartItem  key={item.id} item={item} deleteCartItem={deleteCartItem}/>
         ))
        )
-        : <NoData />
+        : <NoData />  
       }
       </ul>
     </CartLayout>
