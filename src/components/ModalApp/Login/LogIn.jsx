@@ -50,12 +50,7 @@ const Login = () => {
     },
     resolver: yupResolver(schema),
   });
-  useEffect(() => {
-    const users = JSON.parse(localStorage.getItem("users"));
-    if(users){
-      navigate('/')    
-      }
-  }, []);
+ 
 
   const fetchLogin = async (values) => {
 

@@ -1,10 +1,11 @@
 import { Layout } from 'antd'
 import { Content, Footer } from 'antd/es/layout/layout'
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import HeaderApp from '../../../components/HomeLayout/HeaderApp/HeaderApp'
 import styles from '../cart.module.scss'
+import { openLogin } from '../../../components/ModalApp/ModalAppSLice'
 
 
 
@@ -13,6 +14,7 @@ const CartLayout = ({children}) => {
    const users = JSON.parse(localStorage.getItem('users'))
    const data = JSON.parse(localStorage.getItem('quanity')).data || []
  const navigate = useNavigate()
+ const dispatch = useDispatch()
 const {payment} = useParams()
  const listPrice= useSelector(state => state.cart.listCart.totalPrice)
 
@@ -27,7 +29,8 @@ const handleOrder = () => {
     navigate('/cart/payment')
 
     }else{
-      navigate('/login')
+      navigate('/')
+      dispatch(openLogin())
     }
    }
 }

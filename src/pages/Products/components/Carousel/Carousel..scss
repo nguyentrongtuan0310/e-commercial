@@ -1,8 +1,12 @@
+@use '../../../../styles/' as * ;
 .carousel{
     height: 235px;
     display: flex;
     width: 100%;
     justify-content: center;
+    @include responsive(mobie){
+      height: 100%;
+    }
   &__right{
     height: 100%;
     &__img{

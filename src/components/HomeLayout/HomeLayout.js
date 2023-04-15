@@ -42,7 +42,10 @@ const HomeLayout = ({ children }) => {
           <Carousel />
           <SaleProduct />
           <div className="layout__tag">
-            <h2>SẢN PHẨM NỔI BẬT</h2>
+            <div className="layout__tag__title">
+              <h2>SẢN PHẨM NỔI BẬT</h2>
+             {size.width < 567 && <p className="layout__tag__title__text">Xem tất cả</p>} 
+            </div>
             <div className="layout__tag__list">
               {tagList.map((item, i) => (
                 <Tag className="layout__tag__item" key={i}>{item}</Tag>

@@ -49,16 +49,16 @@
     font-size: 15px;
     font-family: sans-serif;
     font-weight: 700;
-    
     align-items: center;
     height: 100%;
     .box-price__new{
         color: #d70018;
-      
         font-size: 18px;
         font-weight: 700;
-   
         margin-bottom: 10px;
+        @include responsive(mobie){
+                font-size: 12px;
+        }
     }
     .box-price__old{
         color: #707070;
@@ -70,6 +70,9 @@
     -webkit-text-decoration: line-through;
     text-decoration: line-through;
     top: 2px;
+    @include responsive(mobie){
+        font-size: 12px;
+}
     }
 }
 .description{

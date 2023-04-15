@@ -72,7 +72,7 @@ const HeaderApp = () => {
               <p>Danh mục</p>
             </Link>
           )}
-          {size.width > 768 && (
+          {size.width > 768 ? (
             <div className={cx("header__icon__wrapper")}>
               <LocationIcon className={cx("header__icon")} />
               <div className={cx("header__icon__text")}>
@@ -80,8 +80,18 @@ const HeaderApp = () => {
                 <p className={cx("header__icon__text__adress")}>Hồ Chí Minh</p>
               </div>
             </div>
+          ) : (
+            <div className={cx("header__search")}>
+            <input
+              className={cx("header__search__input")}
+              type="text"
+              placeholder="Bạn cần tìm gì"
+            />
+            <SearchOutlined className={cx("header__search__icon")} />
+          </div>
           )}
-        </ul>
+        </ul >
+        {size.width > 768 ? (
         <div className={cx("header__search")}>
           <input
             className={cx("header__search__input")}
@@ -90,6 +100,20 @@ const HeaderApp = () => {
           />
           <SearchOutlined className={cx("header__search__icon")} />
         </div>
+
+
+        ): (
+
+          <ul className={cx("nav")}>
+            <div className={cx("header__icon__wrapper")}>
+            <LocationIcon className={cx("header__icon")} />
+            <div className={cx("header__icon__text")}>
+              <p className={cx("header__icon__text__title")}>Xem giá tại</p>
+              <p className={cx("header__icon__text__adress")}>Hồ Chí Minh</p>
+            </div>
+          </div>
+          </ul>
+        )}
         {size.width > 768 && (
           <div className={cx("header__service")}>
             <div className={cx("header__service__icon")}>
@@ -104,7 +128,8 @@ const HeaderApp = () => {
             </div>
           </div>
         )}
-
+        {
+          size.width > 768 && (
         <div className={cx("header__service")}>
           <div className={cx("header__service__icon")}>
             <LocationIcon className={cx("header__icon")} />
@@ -118,6 +143,9 @@ const HeaderApp = () => {
             </p>
           </div>
         </div>
+
+          )
+        }
         {size.width > 1024 && (
           <div className={cx("header__service")}>
             <div className={cx("header__service__icon")}>
@@ -135,10 +163,10 @@ const HeaderApp = () => {
         )}
 
         <span className={cx("header__right")}>
-          <div className={cx("header__right__icon__wrapper")}>
+          <div className={cx("header__right__icon__wrapper")}  onClick={() => navigate("/cart")}>
             <div
               className={cx("header__right__icon")}
-              onClick={() => navigate("/cart")}
+             
             >
               <CartIcon className={cx("header__icon")} />
               <span>{count}</span>
@@ -149,28 +177,35 @@ const HeaderApp = () => {
             </div>
           </div>
 
-          <div>
-            {nameUser ? (
-              <Popover
-                placement="bottomRight"
-                content={content}
-                style={{ top: "53px" }}
-              >
-                <div className={cx("header__right__user")}>
-                  <Avatar
-                    src="https://files.fullstack.edu.vn/f8-prod/user_avatars/1/623d4b2d95cec.png"
-                    className={cx("header__right__avatar")}
-                  />
-                  <p>{nameUser?.user?.name}</p>
+         <>
+         {size.width > 768 && (
+
+
+            <div>
+              {nameUser ? (
+                <Popover
+                  placement="bottomRight"
+                  content={content}
+                  style={{ top: "53px" }}
+                >
+                  <div className={cx("header__right__user")}>
+                    <Avatar
+                      src="https://files.fullstack.edu.vn/f8-prod/user_avatars/1/623d4b2d95cec.png"
+                      className={cx("header__right__avatar")}
+                    />
+                    <p>{nameUser?.user?.name}</p>
+                  </div>
+                </Popover>
+              ) : (
+                <div className={cx("header__users")} onClick={handleLogin}>
+                  <UserIcon className={cx("header__users__icon")} />
+                  <div className={cx("header__users__title")}>Đăng nhập</div>
                 </div>
-              </Popover>
-            ) : (
-              <div className={cx("header__users")} onClick={handleLogin}>
-                <UserIcon className={cx("header__users__icon")} />
-                <div className={cx("header__users__title")}>Đăng nhập</div>
-              </div>
-            )}
-          </div>
+              )}
+            </div>
+
+         )}
+         </>
           <ModalApp />
         </span>
       </div>

@@ -1,9 +1,8 @@
 import { DeleteOutlined } from '@ant-design/icons'
-import { current } from '@reduxjs/toolkit'
-import { InputNumber, Select } from 'antd'
+
 import useNotification from 'antd/es/notification/useNotification'
 import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch} from 'react-redux'
 import styles from './cart.module.scss'
 import { priceDecreseTotalItem, priceTotalItem } from './CartSlice'
 

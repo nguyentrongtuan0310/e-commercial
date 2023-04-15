@@ -1,6 +1,7 @@
 @use "../../styles/" as *;
 .layout {
   position: relative;
+ 
   &__content {
     position: relative;
     width: 1200px;
@@ -19,7 +20,27 @@
       @include flex(unset, center);
       flex-direction: column;
     }
- 
+    &__title{
+      @include responsive(mobie){
+        @include flex(space-between,unset);
+        width: 100%;
+        padding: 0 5px;
+      }
+      &__text{
+        color: $p-color;
+        font-size: 16px;
+      }
+    }
+    &__list{
+      @include responsive(mobie){
+        @include flex(unset,unset);
+        width: 100%;
+        overflow: scroll;
+        &::-webkit-scrollbar {
+          display: none; /* for Chrome, Safari, and Opera */
+        }
+      }
+    }
     &__item {
       padding: 5px 10px;
       border-radius: 10px;

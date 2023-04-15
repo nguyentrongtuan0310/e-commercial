@@ -1,18 +1,11 @@
 @use "../../styles/" as *;
 .wrapper {
     margin-top: 25px;
-    @include responsive(lg) {
+    @include responsive(tabletMobile) {
         width: 100%;
         padding: 0 12px;
     }
-    @include responsive(tablet) {
-        width: 100%;
-        padding: 0 12px;
-    }
-    @include responsive(mobie) {
-        width: 100%;
-        padding: 0 12px;
-    }
+ 
     &__title {
         // margin-bottom: 10px;
         padding-bottom: 10px;
@@ -275,7 +268,7 @@
             cursor: pointer;
             font-size: 12px;
             font-weight: 700;
-            max-height: 30px;
+            min-height: 30px;
             padding: 5px 10px;
             width: fit-content;
             & + & {

@@ -19,7 +19,7 @@ const Product = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchProduct());
-  }, [location]);
+  }, []);
   useEffect(() => {
     const handleScroll = () => {
        if(document.body.scrollTop > 200 || document.documentElement.scrollTop > 200){
@@ -50,6 +50,8 @@ const Product = () => {
                   lg={{span: 6}}
                   md={{span: 8}}
                   sm={{span : 12}}
+                   xs={{span: 12}}
+
                 
                 key={item.id}>
                     <CardItem item={item} title={item.name}/>

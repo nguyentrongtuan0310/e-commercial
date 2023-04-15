@@ -15,17 +15,14 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Product />} />
+          <Route path=":a?" element={<Product />} />
           <Route path=":id/:similar" element={<Detail />} />
           <Route path="/cart" element={<Cart />} />
 
           <Route path="/register" element={<Register />} />
           <Route path="/cart/:payment" element={<PaymentInfo />} />
 
-          <Route path="/" element={<Admin />}>
-            <Route path="user" element={<ListUser />} />
-            <Route path="product" element={<ListProduct />} />
-          </Route>
-          <Route path="/add/:id?" element={<AddProduct />} />
+         
         </Routes>
       </Router>
     </div>

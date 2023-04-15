@@ -89,7 +89,7 @@ const Detail = () => {
             {data ? <h2 className={styles.wrapper__title}>{data.name}</h2> : ""}
 
             <Row gutter={[30, 12]} className={styles.contanier}>
-              <Col lg={{ span: 10 }} md={{ span: 24}} sm={{ span: 24 }}>
+              <Col lg={{ span: 10 }} md={{ span: 24}} sm={{ span: 24 }} >
                 <div className={styles.side__left}>
                   {data ? (
                     <img

@@ -32,9 +32,10 @@
         }
     }
     &__service{
-        @include responsive(tablet){
+        @include responsive(tabletMobie){
             background: hsla(0,0%,100%,.2);
-          
+         
+          margin: 0 10px;
           
         }
         display: flex;
@@ -63,16 +64,19 @@
         }
     }
     &__search {
-        @include responsive(tabletMobie) {
-            width: 200px;
-           }
+      
         position: relative;
         width: 300px;
         display: flex;
-        border-radius: 5px;
+        border-radius: 10px;
         overflow: hidden;
         align-items: center;
-     
+     @include responsive(tablet){
+        width: 415px;
+     }
+     @include responsive(mobie){
+        width: 170px;
+     }
         &__icon {
             cursor: pointer;
             position: absolute;
@@ -91,6 +95,9 @@
             padding: 10px;
             font-size: 16px;
             color: #707070;
+            @include responsive(tablet){
+                font-size: 18px;
+            }
         }
     }
     &__icon {
@@ -109,9 +116,21 @@
             height: 42px;
             padding: 7px 9px;
             position: relative;
+            @include responsive(tablet){
+                width: 130px;
+                margin-left: 20px;
+            
+               
+            }
+            @include responsive(mobie){
+                width: 120px;
+           
+            
+               
+            }
             & > p{
                 color: #fff;
-                // font-weight: 400;
+             
                 font-size: 12px;
                 margin-left: 4px;
                 display: block;
@@ -140,11 +159,17 @@
         }
         &__wrapper  {
             margin-right: 10px;
+            @include responsive(tablet){
+                margin-right: 20px;     
+            }
+            @include responsive(mobie){
+               margin: 0 5px;   
+            }
         }
     }
     &__right {
         @include flex(unset,center);
-        
+        // width: 100%;
 
         &__icon{
             position: relative;
@@ -162,13 +187,23 @@
     
             }
             &__wrapper{
-                @include flex(center,center);
-               
-                
+                @include flex(center,center);  
                 padding: 3px 5px;
                 height: 43px;
-                // margin-left: 10px;
+                
                 border-radius: 10px;
+                @include responsive(tabletMobie){
+                    background: hsla(0,0%,100%,.2);
+                     @include flex(center,center);
+                    width: 112px;
+
+                    flex-direction: column;
+
+                }
+                @include responsive(mobie){
+                    width: 46px;
+
+                }
                 &:hover{
                     background: hsla(0,0%,100%,.2);
                 }
@@ -177,7 +212,16 @@
                     color: #fff;
                     font-weight: 400;
                     font-size: 11px;
+                   @include responsive(tabletMobie){
+                         @include flex(center,unset);
+                    
+                   }
+                   p{
+                    @include responsive(tabletMobie){
+                        margin-left: 2px;
                    
+                  }
+                   }
 
                 }
             }
