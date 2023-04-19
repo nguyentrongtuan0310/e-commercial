@@ -1,66 +1,25 @@
-import { Layout, Menu, Tag, theme } from "antd";
+import { Layout } from 'antd';
 
-import { Carousel } from "../../pages/Products/components/Carousel";
-import "./HomeLayout.scss";
-import HeaderApp from "./HeaderApp/HeaderApp";
-import FooterApp from "./FooterApp/FooterApp";
-import SaleProduct from "../../pages/Products/components/SaleProduct/SaleProduct";
-import MenuBottom from "./MenuBottom/MenuBottom";
-import useResize from "../../hooks/useResize";
-import { useSelector } from "react-redux";
+import { Carousel } from '../Carousel';
+import './HomeLayout.scss';
+import HeaderApp from './HeaderApp/HeaderApp';
+import FooterApp from './FooterApp/FooterApp';
 
-const { Content, Footer } = Layout;
+import { MenuBottom } from '../MenuBottom';
+import useResize from '../../hooks/useResize';
 
 const HomeLayout = ({ children }) => {
+    const size = useResize();
 
-  const tagList = [
-    "Apple",
-    "Samsung",
-    "Xiaomi",
-    "OPPO",
-    "VIVO",
-    "Realme",
-    "Nokia",
-    "ASUS",
-    "Tecno",
-    "Xem tất cả",
-  ];
+    return (
+        <Layout className="layout">
+            <HeaderApp className="layout-header" />
 
-  const {
-    token: { colorBgContainer },
-  } = theme.useToken();
-  const size = useResize()
-
-  return (
-    <Layout className="layout">
-      <HeaderApp className="layout-header" />
-      
-        <div
-         className="layout__content"
-        >
-  
-          <Carousel />
-          <SaleProduct />
-          <div className="layout__tag">
-            <div className="layout__tag__title">
-              <h2>SẢN PHẨM NỔI BẬT</h2>
-             {size.width < 567 && <p className="layout__tag__title__text">Xem tất cả</p>} 
+            <div className="layout__content">
+                <div className="site-layout-content">{children}</div>
             </div>
-            <div className="layout__tag__list">
-              {tagList.map((item, i) => (
-                <Tag className="layout__tag__item" key={i}>{item}</Tag>
-              ))}
-            </div>
-          </div>
-          <div className="site-layout-content">{children}</div>
-        </div>
-        <div>
-          {size.width > 768 ?  <FooterApp /> :  <MenuBottom />}
-         
-         
-        </div>
-    
-    </Layout>
-  );
+            <div>{size.width > 768 ? <FooterApp /> : <MenuBottom />}</div>
+        </Layout>
+    );
 };
 export default HomeLayout;

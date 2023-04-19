@@ -1,0 +1,393 @@
+{
+    "phone": [
+        {
+            "name": "Xiaomi Redmi Note 11 128GB",
+            "price": "26.990.000",
+            "priceOld": " 24.990.000 ₫       ",
+            "description": "Thu cũ lên đời - Trợ giá 1 triệu ",
+            "link": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/1/4/14_1_9_2_9.jpg",
+            "id": "9"
+        },
+        {
+            "name": "OPPO Find N2 Flip",
+            "price": " 19.990.000     ",
+            "priceOld": "18.990.000",
+            "description": "Nhiều ưu đãi khi thanh toán qua VNPAY, ONEPAY và 1km khác",
+            "link": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/n/2/n2_flip_-_combo_product_-_black.png",
+            "id": "10"
+        },
+        {
+            "name": "iPhone 14 128GB  | Chính hãng VN/A",
+            "price": "19.490.000     ",
+            "priceOld": "22.990.000",
+            "description": "Thu cũ lên đời - Trợ giá 1 triệu ",
+            "link": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/i/p/iphone-14-storage-select-202209-6-1inch-y889.jpg",
+            "id": "11"
+        },
+        {
+            "name": "iPhone 14 Pro 128GB | Chính hãng VN/A",
+            "price": "25.090.000",
+            "priceOld": "27.990.000",
+            "description": "Thu cũ lên đời - Trợ giá 1 triệu",
+            "link": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/t/_/t_m_12.png",
+            "id": "12"
+        },
+        {
+            "name": "iPhone 13 Pro Max 128GB | Chính hãng VN/A",
+            "price": "25.290.000",
+            "priceOld": "28.990.000",
+            "description": "Thu cũ lên đời - Trợ giá 1 triệu",
+            "link": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/3/_/3_51_1_7.jpg",
+            "id": "13"
+        },
+        {
+            "name": "Samsung Galaxy A34 5G 8GB 128GB",
+            "price": "8.490.000",
+            "priceOld": "8.490.000",
+            "description": "Giảm ngay 500.000đ khi thanh toán qua VNPAY và ",
+            "link": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/s/m/sm-a346_galaxy_a34_5g_awesome_silver_front.png",
+            "id": "14"
+        },
+        {
+            "name": "Nokia G22 4GB 128GB",
+            "price": "3.450.000",
+            "priceOld": "3.990.000",
+            "description": "[HOT] Thu cũ lên đời giá cao - Thủ tục nhanh - Trợ giá lên tới 1 triệu ",
+            "link": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/d/g/dgtyi8899_.jpg",
+            "id": "15"
+        },
+        {
+            "name": "iPhone 14 Pro Max 256GB | Chính hãng VN/A",
+            "price": " 29.550.000 ₫",
+
+            "priceOld": "32.990.000 ₫",
+            "description": "[HOT] Thu cũ lên đời giá cao - Thủ tục nhanh - Trợ giá lên tới 1 triệu ",
+            "link": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/2/_/2_282.jpg",
+            "id": "16"
+        }
+    ],
+    "laptop": [
+        {
+            "name": "Laptop Lenovo Ideapad Gaming 3 15ARH7",
+            "price": "23.990.000 ₫",
+
+            "priceOld": "27.490.000 ₫",
+
+            "description": "Thu cũ lên đời - Trợ giá 1 triệu  ",
+            "link": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/1/h/1h47.png",
+            "id": "1",
+            "sale": "13"
+        },
+        {
+            "name": "Laptop Lenovo Ideapad Gaming 3 15ARH7",
+            "price": "25.690.000 ₫",
+            "priceOld": "32.990.000 ₫",
+            "description": "Thu cũ đổi mới - Trợ giá 500.000đ và 1 km khác",
+            "link": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/m/a/macbook_air_m2.png",
+            "id": "2",
+            "sale": "22"
+        },
+        {
+            "name": "Laptop Asus Gaming Rog Strix G15 G513IH HN015W",
+            "price": " 18.590.000 ₫",
+            "priceOld": "23.990.000 ₫ ",
+            "description": "Thu cũ lên đời - Trợ giá 1 triệu  ",
+            "link": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/4/h/4h43.png",
+            "id": "3",
+            "sale": "23"
+        },
+        {
+            "name": "Apple Macbook Air M2 2022 16GB 256GB I Chính hãng Apple Việt Nam",
+            "price": " 33.490.000 ₫",
+
+            "priceOld": " 39.990.000 ₫",
+            "description": "Thu cũ đổi mới - Trợ giá 500.000đ và 1 km khác",
+            "link": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/a/i/air_m2_16gb.png",
+            "id": "3",
+            "sale": "16"
+        },
+        {
+            "name": "Laptop ASUS Gaming TUF FX506LHB-HN188W",
+            "price": "16.790.000 ₫",
+
+            "priceOld": " 20.990.000 ₫",
+            "description": "Thu cũ lên đời - Giá thu cao nhất - Tặng thêm 1 triệu khi lên đời ",
+            "link": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/5/h/5h03_1.png",
+            "id": "4",
+            "sale": "20"
+        },
+        {
+            "name": "Laptop Dell Inspiron 3511 5829BLK",
+            "price": "13.490.000 ₫",
+
+            "priceOld": "15.990.000 ₫",
+            "description": "Thu cũ lên đời - Giá thu cao nhất - Tặng thêm 1 triệu khi lên đời  ",
+            "link": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/t/e/text_ng_n_3__1_71.png",
+            "id": "5",
+            "sale": "16"
+        },
+        {
+            "name": "Apple Macbook Pro 13 M2 2022  8GB 256GB I Chính hãng Apple Việt Nam",
+            "price": "28.690.000 ₫",
+
+            "priceOld": " 35.990.000 ₫",
+            "description": "Thu cũ đổi mới - Trợ giá 500.000đ và  ",
+            "link": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/p/r/pro-m2.jpg",
+            "id": "6",
+            "sale": "20"
+        },
+        {
+            "name": "Laptop Lenovo Ideapad Gaming 3 15IHU6 82K101B5VN",
+            "price": "18.990.000 ₫",
+
+            "priceOld": " 22.990.000 ₫",
+            "description": "Thu cũ lên đời - Trợ giá 1 triệu ",
+            "link": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/l/a/lap5h05.png",
+            "id": "7",
+            "sale": "17"
+        },
+        {
+            "name": "Laptop Asus Vivobook X415EA BV451W",
+            "price": "6.990.000 ₫",
+
+            "priceOld": " 9.190.000 ₫",
+            "description": "Phần Mềm Diệt Virus, Office chính hãng chỉ từ 150k và 1km khác",
+            "link": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/8/_/8_10_16.jpg",
+            "id": "7",
+            "sale": "24"
+        }
+    ],
+    "tablet": [
+        {
+            "name": "Samsung Galaxy Tab S8 Ultra 5G",
+            "price": "26.990.000 ₫",
+
+            "priceOld": "30.990.000 ₫",
+
+            "description": "Hỗ trợ trả góp qua ngân hàng lãi suất 0%và  ",
+            "link": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/t/a/tab_s8_ultra.jpg",
+            "id": "1",
+            "sale": "13"
+        },
+        {
+            "id": "2",
+            "sale": "26",
+            "link": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/t/a/tab_s8_2.jpg",
+            "name": "Samsung Galaxy Tab S8 WIFI",
+            "price": " 13.390.000 ₫",
+            "priceOld": "17.990.000 ₫",
+            "description": "Tặng bao da Galaxy Tab S8 chính hãng "
+        },
+        {
+            "id": "3",
+            "sale": "27",
+            "link": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/5/_/5_160_6.jpg",
+            "name": "iPad Air 4 (2020) 4G 256GB I Chính hãng Apple Việt Nam ",
+            "price": "17.590.000 ₫",
+            "priceOld": "23.990.000 ₫",
+            "description": "Phần mềm bản quyền Office đi kèm 1 TB Onedrive chỉ từ 990,000 và "
+        },
+        {
+            "id": "4",
+            "sale": "16",
+            "link": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/1/_/1_253_3.jpg",
+            "name": "iPad Air 5 (2022) 64GB I Chính hãng Apple Việt Nam",
+            "price": " 14.190.000 ₫",
+            "priceOld": "16.990.000 ₫",
+            "description": "Phần mềm bản quyền Office đi kèm 1 TB Onedrive chỉ từ 990,000 và  "
+        },
+        {
+            "id": "5",
+            "sale": "8",
+            "link": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/3/_/3_229.jpg",
+            "name": "iPad mini 6 WiFi 64GB | Chính hãng Apple Việt Nam",
+            "price": " 11.890.000 ₫",
+            "priceOld": "12.990.000 ₫",
+            "description": "Phần mềm bản quyền Office đi kèm 1 TB Onedrive chỉ từ 990,000 và  "
+        },
+        {
+            "id": "6",
+            "sale": "15",
+            "link": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/i/p/ipad-2022-hero-silver-wifi-select.png",
+            "name": "iPad Gen 10 10.9 inch 2022 Wifi 64GB I Chính hãng Apple Việt Nam",
+            "price": " 10.390.000 ₫",
+            "priceOld": "12.990.000 ₫",
+            "description": "Thu cũ lên đời - Trợ giá 500.000đ  "
+        },
+        {
+            "id": "7",
+            "sale": "13",
+            "link": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/i/p/ipad-pro-13-select-wifi-spacegray-202210-02.jpg",
+            "name": "iPad Pro 11 inch 2022 M2 Wifi 128GB I Chính hãng Apple Việt Nam ",
+            "price": " 20.990.000 ₫",
+            "priceOld": "23.990.000 ₫",
+            "description": "Thu cũ lên đời - Trợ giá 1 triệu  "
+        },
+        {
+            "id": "8",
+            "sale": "14",
+            "link": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/n/o/nokia-t20-1-600x600.jpg",
+            "name": "iPad 10.2 2021 WiFi 256GB | Chính hãng Apple Việt Nam",
+            "price": " 11.190.000 ₫",
+            "priceOld": "12.990.000 ₫",
+            "description": "Phần mềm bản quyền Office đi kèm 1 TB Onedrive chỉ từ 990,000 và "
+        }
+    ],
+    "sound": [
+        {
+            "id": "1",
+            "sale": "31",
+            "link": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/g/r/group_169_2.png",
+            "name": "Tai nghe Bluetooth Apple AirPods 2 VN/A",
+            "price": "2.740.000 ₫",
+            "priceOld": "3.990.000 ₫",
+            "description": "Nhận gói 6 tháng Apple Music miễn phí "
+        },
+        {
+            "id": "2",
+            "sale": "54",
+            "link": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/f/r/frame_1_3_9.png",
+            "name": "Tai nghe không dây Samsung Galaxy Buds2",
+            "price": "1.390.000 ₫",
+            "priceOld": "2.990.000 ₫",
+            "description": "Nhận gói 6 tháng Apple Music miễn phí "
+        },
+        {
+            "id": "3",
+            "sale": "9",
+            "link": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/g/r/group_170_9.png",
+            "name": "Tai nghe Bluetooth Apple AirPods 3 MagSafe | Chính hãng Apple Việt Nam",
+            "price": "4.550.000 ₫",
+            "priceOld": "4.990.000 ₫",
+            "description": "Nhận gói 6 tháng Apple Music miễn phí "
+        },
+        {
+            "id": "3",
+            "sale": "13",
+            "link": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/g/r/group_111_5_.png",
+            "name": "Tai nghe Bluetooth Apple AirPods Pro 2022 | Chính hãng Apple Việt Nam",
+            "price": "6.100.000 ₫",
+            "priceOld": "6.990.000 ₫",
+            "description": "Thu cũ đổi mới giảm đến 500.000đ "
+        },
+        {
+            "id": "4",
+            "sale": "31",
+            "link": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/g/r/group_170_1_1.png",
+            "name": " Tai nghe Bluetooth Apple AirPods 3 2022 sạc có dây | Chính hãng Apple Việt Nam",
+            "price": "4.150.000 ₫",
+            "priceOld": "5.990.000 ₫",
+            "description": "Thu cũ đổi mới giảm đến 500.000đ "
+        },
+        {
+            "id": "5",
+            "sale": "14",
+            "link": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/g/r/group_211_2_1.png",
+            "name": "Loa Bluetooth JBL Charge 4",
+            "price": "2.990.000 ₫",
+            "priceOld": "3.490.000 ₫",
+            "description": "Thu cũ đổi mới giảm đến 500.000đ "
+        },
+        {
+            "id": "6",
+            "sale": "29",
+            "link": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/g/r/group_168_1__1.png",
+            "name": "Tai nghe Bluetooth Apple AirPods Pro 2021 Magsafe | Chính hãng Apple Việt Nam",
+            "price": "4.990.000 ₫",
+            "priceOld": "6.990.000 ₫",
+            "description": "Nhận gói 6 tháng Apple Music miễn phí "
+        },
+        {
+            "id": "7",
+            "sale": "76",
+            "link": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/g/r/group_182_1__1.png",
+            "name": "Tai nghe không dây Samsung Galaxy Buds Live",
+            "price": "1.090.000 ₫",
+            "priceOld": "4.990.000 ₫",
+            "description": "Nhận gói 6 tháng Apple Music miễn phí "
+        },
+        {
+            "id": "8",
+            "sale": "28",
+            "link": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/g/r/group_150_1_3.png",
+            "name": "Tai nghe không dây Marshall Minor 3 ",
+            "price": "2.890.000 ₫",
+            "priceOld": "3.990.000 ₫",
+            "description": "Nhận gói 6 tháng Apple Music miễn phí "
+        }
+    ],
+    "watch": [
+        {
+            "id": "1",
+            "sale": "18",
+            "link": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/s/m/smart_band.png",
+            "name": "Vòng đeo tay thông minh Huawei Band 7 ",
+            "price": "899.000 ₫",
+            "priceOld": "1.090.000 ₫",
+            "description": "Mua đồng hồ Huawei nhận ngay giảm giá 200K Matepad HW SE"
+        },
+        {
+            "id": "2",
+            "sale": "14",
+            "link": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/h/u/huawei_13_.png",
+            "name": "Đồng hồ thông minh Huawei Watch Buds",
+            "price": "9.490.000 ₫",
+            "priceOld": "10.090.000 ₫",
+            "description": "Mua đồng hồ Huawei nhận ngay giảm giá 200K Matepad HW SE"
+        },
+        {
+            "id": "3",
+            "sale": "29",
+            "link": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/h/u/huawei_1_2.png",
+            "name": "Đồng hồ thông minh Huawei Watch GT3 46mm dây da",
+            "price": "4.990.000 ₫",
+            "priceOld": "6.990.000 ₫",
+            "description": "Mua đồng hồ Huawei nhận ngay giảm giá 200K Matepad HW SE"
+        },
+        {
+            "id": "4",
+            "sale": "20",
+            "link": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/a/p/apple_lte_13_.png",
+            "name": "Đồng hồ thông minh Huawei Watch GT3 46mm dây da",
+            "price": "6.790.000 ₫",
+            "priceOld": "8.490.000 ₫",
+            "description": "Thu cũ lên đời - trợ giá 500.000đ "
+        },
+        {
+            "id": "5",
+            "sale": "27",
+            "link": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/x/i/xiaomi_2_.png",
+            "name": "Đồng hồ thông minh Xiaomi Redmi Watch 2 Lite",
+            "price": "1.090.000 ₫",
+            "priceOld": "1.490.000 ₫",
+            "description": "Thu cũ lên đời - trợ giá 500.000đ "
+        },
+        {
+            "id": "6",
+            "sale": "23",
+            "link": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/a/p/apple_gps_1_.png",
+            "name": "Apple Watch Series 8 41mm GPS viền nhôm | Chính hãng VN/A",
+            "price": "9.290.000 ₫",
+            "priceOld": "11.990.000 ₫",
+            "description": "Thu cũ lên đời - trợ giá 500.000đ "
+        },
+        {
+            "id": "7",
+            "sale": "16",
+            "link": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/a/p/apple_lte_12_.png",
+            "name": "Apple Watch SE 2022 40mm | Chính Hãng VN/A",
+            "price": "6.290.000 ₫",
+            "priceOld": "7.490.000 ₫",
+            "description": "Thu cũ lên đời - trợ giá 500.000đ "
+        },
+        {
+            "id": "8",
+            "sale": "18",
+            "link": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/h/u/huawei_1_.png",
+            "name": "Đồng hồ thông minh Huawei Watch GT3 Pro dây silicone",
+            "price": "6.990.000 ₫",
+            "priceOld": "8.490.000 ₫",
+            "description": "Mua đồng hồ Huawei nhận ngay giảm giá 200K Matepad HW SE "
+        }
+    ]
+}

@@ -2,7 +2,7 @@ import React from 'react'
 import { Layout } from 'antd'
 
 import styles from './Register.module.scss'
-import MainLayout from '../../components/MainLayout/MainLayout'
+
 import { BackIcon } from '../../components/Icon'
 import HeaderApp from '../../components/HomeLayout/HeaderApp/HeaderApp'
 import shipper from '../../img/shipper.png'

@@ -1,0 +1,67 @@
+@use "../../styles/" as *;
+.drawer {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.53);
+    z-index: 10;
+    &__info {
+        @include flex(space-between, center);
+        margin-top: 10px;
+        padding: 0 10px;
+        &__name {
+            @include flex(unset, center);
+            span {
+                font-size: 16px;
+                color: #000;
+                font-weight: 500;
+                margin-left: 4px;
+            }
+        }
+        &__img {
+            width: 35px;
+            height: 35px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        &__icon {
+            font-size: 14px;
+        }
+    }
+    &__content {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 300px;
+        background-color: #fff;
+        height: 100vh;
+    }
+    &__list {
+        margin-top: 20px;
+    }
+    &__item {
+        @include flex(unset, center);
+        list-style: none;
+        font-size: 15px;
+        color: #343a40;
+        font-weight: 700;
+        margin-bottom: 10px;
+        padding: 6px 10px;
+        cursor: pointer;
+
+        &:hover {
+            background: #f3f4f6;
+            border-radius: 5px;
+        }
+        &__img {
+            background: url("https://cellphones.com.vn/media/icons/menu/icon-cps-3.svg") center no-repeat;
+            width: 25px;
+            height: 25px;
+            display: inline-block;
+            margin-right: 4px;
+        }
+    }
+}

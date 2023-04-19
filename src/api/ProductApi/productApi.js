@@ -1,27 +1,49 @@
-import axiosClient from "../axiosClient"
+import axiosClient from '../axiosClient';
 
 const productApi = {
-    getAll(params){
-        const url = '/user'
-        return axiosClient.get(url,{params})
+    getAll(params) {
+        const url = '/';
+        return axiosClient.get(url, { params });
     },
-    getById(id){
-        const url= `/user/${id}`
-        return axiosClient.get(url)
+    getPhone(params) {
+        const url = '/phone';
+        return axiosClient.get(url, { params });
     },
-    deleteProduct(id){
-        const url= `/user/${id}`
-        return axiosClient.delete(url)
+    getLaptop(params) {
+        const url = '/laptop';
+        return axiosClient.get(url, { params });
     },
-    putProduct(id,data){
-        const url= `/user/${id}`
-        return axiosClient.put(url,data)
-
+    getTablet(params) {
+        const url = '/tablet';
+        return axiosClient.get(url, { params });
     },
-
-    addProduct(data){
-        const url = '/user'
-        return axiosClient.post(url,data)
-    }
-}
-export default productApi
+    getSound(params) {
+        const url = '/sound';
+        return axiosClient.get(url, { params });
+    },
+    getWatch(params) {
+        const url = '/watch';
+        return axiosClient.get(url, { params });
+    },
+    getByIdPhone(id) {
+        const url = `/phone/${id}`;
+        return axiosClient.get(url);
+    },
+    getByIdTablet(id) {
+        const url = `/tablet/${id}`;
+        return axiosClient.get(url);
+    },
+    getByIdLaptop(id) {
+        const url = `/laptop/${id}`;
+        return axiosClient.get(url);
+    },
+    getByIdSound(id) {
+        const url = `/sound/${id}`;
+        return axiosClient.get(url);
+    },
+    getByIdWatch(id) {
+        const url = `/watch/${id}`;
+        return axiosClient.get(url);
+    },
+};
+export default productApi;

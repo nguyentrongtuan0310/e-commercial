@@ -1,29 +1,23 @@
 @use "../../styles/" as *;
 .wrapper {
-    margin-top: 25px;
     @include responsive(tabletMobile) {
         width: 100%;
         padding: 0 12px;
     }
- 
+
     &__title {
         // margin-bottom: 10px;
         padding-bottom: 10px;
         border-bottom: 1px solid #ccc;
         @include responsive(lg) {
             text-align: center;
-            
-           }
-           @include responsive(tablet) {
-             text-align: center;
-            
-     
-           }
-           @include responsive(mobie) {
-             text-align: center;
-             
-     
-           }   
+        }
+        @include responsive(tablet) {
+            text-align: center;
+        }
+        @include responsive(mobie) {
+            text-align: center;
+        }
     }
 }
 .side__right {
@@ -297,7 +291,7 @@
 .toast {
     position: absolute;
     @include flex(center, center);
-    top: 70px;
+    top: 0px;
     left: 50%;
     transform: translate(-50%);
     border-radius: 10px;

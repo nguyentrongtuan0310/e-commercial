@@ -1,0 +1,67 @@
+@use "../../styles/" as *;
+.carousel {
+  height: 235px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  @include responsive(mobie) {
+    height: 100%;
+  }
+  &__right {
+    height: 100%;
+    &__img {
+      height: 115px;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+.swpier__carosel {
+  width: 100%;
+  height: 100%;
+}
+
+.mySwiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mySwiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slider {
+  margin-left: auto;
+  margin-right: auto;
+  & .slider-button-next {
+    &::after {
+      font-size: 50px;
+    }
+  }
+}
+.swiper-button-next,
+.swiper-button-prev {
+  background-color: rgba(0, 0, 0, 0.18);
+  width: 35px;
+  height: 60px;
+
+  .icon {
+    font-size: 20px;
+    color: #fff;
+  }
+}
+.mySwiper-button-next {
+  right: 3px !important;
+}
+.mySwiper-button-prev {
+  left: 3px !important;
+}

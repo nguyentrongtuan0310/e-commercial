@@ -1,0 +1,14 @@
+@use "../../styles/" as *;
+.wrapper {
+    position: relative;
+
+    &__container {
+        position: relative;
+        width: 1200px;
+        margin: 10px auto 0;
+        @include responsive(tabletMobie) {
+            width: 100%;
+            padding: 0 12px;
+        }
+    }
+}

@@ -1,132 +1,112 @@
-@use '../../styles/' as *;
-@import 'normalize.css';
+@use "../../styles/" as *;
+@import "normalize.css";
 
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,900;1,300;1,400&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,100&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,900;1,300;1,400&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,100&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&display=swap");
 
 :root {
-    --primary: rgb(255, 59, 92);
+  --primary: rgb(255, 59, 92);
 }
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 html {
-    font-size: 62.5%;
-    overflow-x: hidden;
-    color: $text-color;
-    scroll-behavior: smooth;
-
+  font-size: 62.5%;
+  overflow-x: hidden;
+  color: $text-color;
+  scroll-behavior: smooth;
 }
 body {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.6rem;
-    line-height: 1.5;
-    text-rendering: optimizeSpeed;
- 
-   
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
 }
-.ant-layout-header{
+.ant-layout-header {
   padding: 0 !important;
 }
-.ant-layout-content{
+.ant-layout-content {
   width: 1200px;
   margin: 0 auto;
   overflow-x: hidden;
-  @include responsive(lg){
+  @include responsive(lg) {
     width: 100%;
     padding: 0 12px;
-
-
-    
   }
-  @include responsive(tablet){
+  @include responsive(tablet) {
     width: 100%;
     padding: 0 12px;
     margin: 0 auto;
-
-
-    
   }
-  @include responsive(mobie){
+  @include responsive(mobie) {
     width: 100%;
     padding: 0 12px;
     margin: 0 auto;
-
-
-
-    
-}
+  }
 }
 // propver
 
-.ant-popover{
-    top: 50px !important;
-    // left: -30px !important;
-    left: 1205px !important;
-    }
-  .ant-layout .ant-layout-header{
-    background-color: $primary-color;
+.ant-popover {
+  top: 50px !important;
+  // left: -30px !important;
+  left: 1205px !important;
+}
+.ant-layout .ant-layout-header {
+  background-color: $primary-color;
+}
+.ant-popover-content {
+  width: 145px;
+}
+.ant-popover-arrow {
+  right: 20px !important;
+  &::before {
+    bottom: -1px !important;
   }
-  .ant-popover-content{
-   width: 145px;
-  }
-  .ant-popover-arrow{
-    right: 20px !important;
-    &::before{
-      bottom: -1px !important;
-  
-    }
-  }
-  .ant-popover-inner{
-   
-   padding: 12px 0 12px 15px !important;
-  }
-  .ant-popover-content p:hover{
-    color: $primary-color;
+}
+.ant-popover-inner {
+  padding: 12px 0 12px 15px !important;
+}
+.ant-popover-content p:hover {
+  color: $primary-color;
+}
 
-  }
+.ant-radio-checked .ant-radio-inner {
+  border-color: $primary-color !important ;
+  background-color: unset !important;
+}
 
-  .ant-radio-checked .ant-radio-inner{
-    border-color: $primary-color !important ;
-    background-color: unset !important;
+.ant-radio-checked .ant-radio-inner:after {
+  background-color: $primary-color;
+  color: $primary-color;
+}
 
-  }
-  
-  .ant-radio-checked .ant-radio-inner:after{
-    background-color: $primary-color;
-    color: $primary-color;
-  }
-  
-  .ant-radio:hover .ant-radio-inner {
-    border-color: $primary-color ;
-  }
-  .ant-form-item .ant-form-item-label >label{
-    min-width: 70px !important;
-  }
-  .ant-form-item{
-    margin-bottom: 8px;
-   
-  }
-  .ant-select-selector{
-    height: 38px !important;
-    line-height: 38px !important;
-    font-size: 16px !important;
- 
-  }
+.ant-radio:hover .ant-radio-inner {
+  border-color: $primary-color;
+}
+.ant-form-item .ant-form-item-label > label {
+  min-width: 70px !important;
+}
+.ant-form-item {
+  margin-bottom: 8px;
+}
+.ant-select-selector {
+  height: 38px !important;
+  line-height: 38px !important;
+  font-size: 16px !important;
+}
 
-
-.ant-layout-content{
+.ant-layout-content {
   padding: 0 !important;
 }
 .ant-rate .ant-rate-star:not(:last-child) {
   margin-inline-end: 1px;
 }
 
-button{
+button {
   cursor: pointer;
 }
-.ant-btn-default{
+.ant-btn-default {
   display: none !important;
 }
 // .ant-spin{
