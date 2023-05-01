@@ -1,5 +1,6 @@
 const routes = {
     home: '/',
+    cart: '/cart',
     phone: '/phone',
     tablet: '/tablet',
     laptop: '/laptop',
@@ -7,7 +8,6 @@ const routes = {
     sound: '/sound',
     detail: '/:category/:id',
     all: '/:id',
-    cart: '/cart',
     payment: '/cart/:payment',
     register: '/register',
 };

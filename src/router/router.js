@@ -13,14 +13,13 @@ import { Phone } from '../pages/Phone';
 const publicRoutes = [
     { component: Home, path: configs.routes.home },
     { component: Phone, path: configs.routes.phone },
+    { component: Cart, path: configs.routes.cart, layout: HeaderOnly },
     { component: Tablet, path: configs.routes.tablet },
     { component: Laptop, path: configs.routes.laptop },
     { component: Watch, path: configs.routes.watch },
     { component: Sound, path: configs.routes.sound },
     { component: Detail, path: configs.routes.detail },
     { component: Detail, path: configs.routes.all },
-
-    { component: Cart, path: configs.routes.cart, layout: HeaderOnly },
     { component: PaymentInfo, path: configs.routes.payment, layout: HeaderOnly },
     { component: Register, path: configs.routes.register, layout: HeaderOnly },
 ];
