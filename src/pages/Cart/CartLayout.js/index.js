@@ -8,16 +8,18 @@ import styles from '../cart.module.scss';
 import { openLogin } from '../../../components/ModalApp/ModalAppSLice';
 
 const CartLayout = ({ children }) => {
-    const [value, setValue] = useState('TIẾN HÀNH ĐẶT HÀNG');
     const users = JSON.parse(localStorage.getItem('users'));
     const data = JSON.parse(localStorage.getItem('quanity')).data || [];
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const { payment } = useParams();
     const listPrice = useSelector((state) => state.cart.listCart.totalPrice);
-
+    const VND = new Intl.NumberFormat('vi-VN', {
+        style: 'currency',
+        currency: 'VND',
+    });
     const price = listPrice.reduce((cur, item) => {
-        return (Number.parseFloat(item.item.price) * item.countTotal + cur).toString();
+        return item.item.price * item.countTotal + cur;
     }, 0);
 
     const handleOrder = () => {
@@ -30,6 +32,7 @@ const CartLayout = ({ children }) => {
             }
         }
     };
+
     return (
         <>
             <div className={styles.wrapper}>
@@ -39,7 +42,7 @@ const CartLayout = ({ children }) => {
             <div className={styles.pay}>
                 <div className={styles.pay__title}>
                     <h3 className={styles.pay__name}>Tổng tiền tạm tính:</h3>
-                    <p className={styles.pay__total__price}>{price}0.000 ₫</p>
+                    <p className={styles.pay__total__price}>{VND.format(price)}</p>
                 </div>
                 <button type="submit" className={styles.pay__btn__order} onClick={handleOrder}>
                     {payment ? 'TIẾP TỤC' : 'TIẾN HÀNH ĐẶT HÀNG'}

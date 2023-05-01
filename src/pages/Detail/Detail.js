@@ -16,8 +16,9 @@ import Info from './Info/Info';
 import { CheckIcon } from '../../components/Icon';
 import useResize from '../../hooks/useResize';
 import { MenuBottom } from '../../components/MenuBottom';
-import { fetchPhone } from '../../features/productSlice';
+import { fetchLaptop, fetchPhone, fetchSound, fetchTablet, fetchWatch } from '../../features/productSlice';
 import { ProductSwiper } from '../../components/ProductSwiper';
+import BackToTop from '../../components/BackToTop/BackToTop';
 
 const Detail = () => {
     const [data, setData] = useState();
@@ -29,32 +30,52 @@ const Detail = () => {
     const toastRef = useRef();
     const dispatch = useDispatch();
     let location = useLocation();
+    const { category } = useParams();
 
     useEffect(() => {
-        dispatch(fetchPhone());
+        if ((id > 36 && id < 45) || category === 'watch') {
+            dispatch(fetchWatch());
+        } else if ((id > 8 && id < 17) || category === 'phone') {
+            dispatch(fetchPhone());
+        } else if ((id > 0 && id < 10) || category === 'laptop') {
+            dispatch(fetchLaptop());
+        } else if ((id > 21 && id < 28) || category === 'tablet') {
+            dispatch(fetchTablet());
+        } else if ((id > 27 && id < 37) || category === 'sound') {
+            dispatch(fetchSound());
+        }
     }, [location]);
     const list = [
         {
             id: 0,
             title: 'PHỤ KIỆN MUA CÙNG',
-            link: `/${id}/accessory`,
         },
         {
             id: 1,
             title: 'SẢN PHẨM TƯƠNG TỰ',
-            link: `/${id}/similar`,
         },
         {
             id: 2,
             title: 'THAM KHẢO THÊM HÀNG CŨ',
-            link: `/${id}/refer`,
         },
     ];
     const handleActive = (item) => {
         setTitle(item);
     };
     const getData = async () => {
-        const res = await productApi.getByIdPhone(id);
+        let res;
+        if (id > 36 && id < 45) {
+            res = await productApi.getByIdWatch(id);
+        } else if (id > 8 && id < 17) {
+            res = await productApi.getByIdPhone(id);
+        } else if (id > 0 && id < 10) {
+            res = await productApi.getByIdLaptop(id);
+        } else if (id > 21 && id < 28) {
+            res = await productApi.getByIdTablet(id);
+        } else if (id > 27 && id < 37) {
+            res = await productApi.getByIdSound(id);
+        }
+
         setData(res);
     };
     useEffect(() => {
@@ -63,11 +84,13 @@ const Detail = () => {
 
     const handleAddProduct = () => {
         dispatch(countTotalItem({ count: 1, product: data }));
-        if (!item.includes(data)) {
+        const index = item.findIndex((a) => a.id === data.id);
+
+        if (index < 0) {
             toastRef.current.classList.add(styles.visible);
             setTimeout(() => {
                 toastRef.current.classList.remove(styles.visible);
-            }, 3000);
+            }, 1000);
             localStorage.setItem(
                 'quanity',
                 JSON.stringify({
@@ -77,8 +100,12 @@ const Detail = () => {
             );
         }
     };
+    const VND = new Intl.NumberFormat('vi-VN', {
+        style: 'currency',
+        currency: 'VND',
+    });
     const size = useResize();
-    console.log(data);
+
     return (
         <div>
             <Content className={styles.wrapper}>
@@ -93,20 +120,20 @@ const Detail = () => {
                         </Col>
                         <Col lg={{ span: 14 }} md={{ span: 24 }} sm={{ span: 24 }} className={styles.side__right}>
                             <div className={styles.price}>
-                                <span className={styles.price__regular}>{data && data.price}</span>
-                                <span className={styles.price__old}>{data && data.priceOld}</span>
+                                <span className={styles.price__regular}>{data && VND.format(data.price)}</span>
+                                <span className={styles.price__old}>{data && VND.format(data.priceOld)}</span>
                             </div>
                             <div className={styles.size}>
                                 <div className={styles.size__item}>
                                     <p>44mn</p>
-                                    <span>{data && data.price}</span>
+                                    <span>{data && VND.format(data.price)}</span>
                                     <span className={styles.size__icon}>
                                         <CheckOutlined />
                                     </span>
                                 </div>
                                 <div className={styles.size__item}>
                                     <p>44mn</p>
-                                    <span>{data && data.price}</span>
+                                    <span>{data && VND.format(data.price)}</span>
                                     <span className={styles.size__icon}>
                                         <CheckOutlined />
                                     </span>
@@ -116,21 +143,21 @@ const Detail = () => {
                             <div className={styles.size}>
                                 <div className={styles.size__item}>
                                     <p>Trắng</p>
-                                    <span>{data && data.price}</span>
+                                    <span>{data && VND.format(data.price)}</span>
                                     <span className={styles.size__icon}>
                                         <CheckOutlined />
                                     </span>
                                 </div>
                                 <div className={styles.size__item}>
                                     <p>Đen</p>
-                                    <span>{data && data.price}</span>
+                                    <span>{data && VND.format(data.price)}</span>
                                     <span className={styles.size__icon}>
                                         <CheckOutlined />
                                     </span>
                                 </div>
                                 <div className={styles.size__item}>
                                     <p>Bạc</p>
-                                    <span>{data && data.price}</span>
+                                    <span>{data && VND.format(data.price)}</span>
                                     <span className={styles.size__icon}>
                                         <CheckOutlined />
                                     </span>
@@ -209,6 +236,7 @@ const Detail = () => {
                     <p className={styles.toast__text}>Thêm vào giỏ hàng thành công</p>
                 </div>
             </Content>
+            <BackToTop />
         </div>
     );
 };

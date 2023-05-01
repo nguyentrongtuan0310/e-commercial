@@ -1,13 +1,14 @@
 @use "../../styles/" as *;
 .wrapper {
-height: 100vh;
-background-color: #fff;
-
+    height: 100vh;
+    background-color: #fff;
 }
 .register {
     width: 700px;
     margin: 0 auto;
- 
+    @include responsive(mobie) {
+        width: 100%;
+    }
 
     &__title {
         @include flex(unset, center);
@@ -18,33 +19,34 @@ background-color: #fff;
             font-weight: 700;
             font-size: 22px;
         }
-        &__icon{
+        &__icon {
             cursor: pointer;
             position: relative;
             top: 5px;
         }
     }
-    &__logo{
-       
+    &__logo {
         text-align: center;
-        
-        &__img{
+
+        &__img {
             width: 213px;
-         height: 213px;
+            height: 213px;
             object-fit: cover;
         }
-        &__text{
+        &__text {
             font-size: 20px;
             font-weight: 700;
-       
         }
     }
-    &__line{
+    &__line {
         font-size: 14px;
         margin: 15px auto;
         position: relative;
         width: 630px;
-
+        @include responsive(mobie) {
+            width: 300px;
+            margin: 0 auto;
+        }
         &::after {
             border-top: solid rgba(0, 0, 0, 0.2);
             content: "";
@@ -65,33 +67,42 @@ background-color: #fff;
             transform: translateX(-50%);
         }
     }
-    &__btn{
-       @include flex(center,center);
-       width: 100%;
-        
-    padding: 14px 0;
-    border: 1px solid hsla(0,0%,78.8%,.5);
-    border-radius: 10px;
-    margin-top: 20px;
-    &__icon{
-        width: 24px;
-        height: 24px;
-        object-fit: cover;
+    &__btn {
+        @include flex(center, center);
+        width: 100%;
+
+        padding: 14px 0;
+        border: 1px solid hsla(0, 0%, 78.8%, 0.5);
+        border-radius: 10px;
+        margin-top: 20px;
+        @include responsive(tablet) {
+            width: 630px;
+            margin: 0 auto;
+        }
+        @include responsive(mobie) {
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        &__icon {
+            width: 24px;
+            height: 24px;
+            object-fit: cover;
+        }
+        &__text {
+            font-size: 16px;
+            color: $p-color;
+            margin-left: 10px;
+        }
     }
-    &__text{
-        font-size: 16px;
-        color: $p-color;
-        margin-left: 10px;
-    }
-    }
-    &__question{
-      text-align: center;
-      margin: 20px 0;
-        &__text{
+    &__question {
+        text-align: center;
+        margin: 20px 0;
+        &__text {
             font-size: 14px;
             color: $p-color;
         }
-        &__link{
+        &__link {
             margin-left: 5px;
             font-size: 14px;
             color: #fd2424;
@@ -100,59 +111,67 @@ background-color: #fff;
 }
 
 // form register
-.form{
+.form {
     margin-top: 10px;
-    &__item{
-        @include flex(center,unset);
+    &__item {
+        @include flex(center, unset);
         margin-top: 20px;
-       
-        &__input{
-
-            width: 100%;
-        line-height: 40px;
-        padding: 0 15px;
-        box-sizing: border-box;
-        font-size: 14px;
-        color: #222;
-        border: 1px solid #fafafa;
-        border-radius: 3px;
-        background: #fafafa;
-                
-            width: 630px;
-           
-          &::placeholder{
-                color: #333;
-
-          }
-          &:focus{
-         
-            border-color: #e11b1e !important;
-          }
-          &:hover{
-            border-color: #e11b1e !important;
-            
-          }
-          
+        @include responsive(mobie) {
+            width: 300px;
+            margin: 0 auto;
         }
-        &__checkbox{
+        &__input {
+            width: 100%;
+            line-height: 40px;
+            padding: 0 15px;
+            box-sizing: border-box;
+            font-size: 14px;
+            color: #222;
+            border: 1px solid #fafafa;
+            border-radius: 3px;
+            background: #fafafa;
+
+            width: 630px;
+            @include responsive(mobie) {
+                width: 300px;
+            }
+            &::placeholder {
+                color: #333;
+            }
+            &:focus {
+                border-color: #e11b1e !important;
+            }
+            &:hover {
+                border-color: #e11b1e !important;
+            }
+        }
+        &__checkbox {
             margin-left: 35px;
-            .ant-checkbox{
+            .ant-checkbox {
                 background-color: red !important;
             }
         }
-        &__btn{
+        &__btn {
             width: 630px;
             cursor: pointer;
             display: block;
             background: #fd2424;
-            border: 0.5px solid hsla(0,0%,46.7%,.5);
-            box-shadow: 0 4px 4px rgba(255,0,0,.2);
+            border: 0.5px solid hsla(0, 0%, 46.7%, 0.5);
+            box-shadow: 0 4px 4px rgba(255, 0, 0, 0.2);
             border-radius: 25px;
             text-align: center;
             color: #fff;
             padding: 14px 0;
             margin-top: 20px;
             font-size: 15px;
+            @include responsive(mobie) {
+                width: 300px;
+                margin: 0 auto;
+            }
+            @include responsive(tablet) {
+                width: 630px;
+                margin: 0 auto;
+            }
         }
     }
 }

@@ -1,3 +1,4 @@
+@use "../../styles/" as *;
 .menu__md {
     background: #fff;
     border-radius: 10px 10px 0 0;
@@ -9,13 +10,13 @@
     position: fixed;
     width: 100%;
     z-index: 100;
-    &__item.active{
-        .menu__md__item__text{
-            color: red;
+    &__item.active {
+        .menu__md__item__text {
+            color: $primary-color;
         }
-        .menu__md__item__icon{
-            stroke: red;
-            color: red;
+        .menu__md__item__icon {
+            stroke: $primary-color;
+            color: $primary-color;
         }
     }
     &__list {
@@ -37,7 +38,7 @@
         font-size: 12px;
         font-weight: 700;
         justify-content: center;
-       
+
         &__icon {
             fill: none;
             stroke: #231f20;
@@ -49,7 +50,5 @@
         &:hover {
             color: #707070;
         }
-       
-      
     }
 }

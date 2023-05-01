@@ -1,1 +1,1 @@
-export { default as Laptop } from './Laptopq';
+export { default as Laptop } from './Laptop';

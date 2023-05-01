@@ -71,7 +71,8 @@
             width: 415px;
         }
         @include responsive(mobie) {
-            width: 170px;
+            width: 290px;
+            margin-right: 5px;
         }
         &__icon {
             cursor: pointer;
@@ -118,6 +119,7 @@
             }
             @include responsive(mobie) {
                 width: 120px;
+                display: none;
             }
             & > p {
                 color: #fff;

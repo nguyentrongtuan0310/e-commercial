@@ -1,25 +1,30 @@
 import { Card } from 'antd';
 import './CardItem.scss';
 import Rate from '../Rate/rate';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import { HeartIcon, HeartIconActive } from '../../components/Icon';
 import classNames from 'classnames';
 const { Meta } = Card;
-
+const VND = new Intl.NumberFormat('vi-VN', {
+    style: 'currency',
+    currency: 'VND',
+});
 const CardItem = ({ item }) => {
     const [active, setActive] = useState(false);
+    const [status, setStatus] = useState(false);
     const navigate = useNavigate();
 
     const handleCard = (e) => {
         if (e.target.closest('.btn-wish-list')) {
             setActive(!active);
         } else {
-            navigate(`/${item.id}/accessory`);
+            navigate(item.id);
         }
     };
+
     return (
         <Card hoverable className="card" cover={<img alt="example" src={item.link} />} onClick={handleCard}>
             <Meta
@@ -27,13 +32,13 @@ const CardItem = ({ item }) => {
                 description={
                     <>
                         <div className="box-price">
-                            <span className="box-price__new">{item.price} ₫</span>
-                            <span className="box-price__old">{item.priceOld} ₫</span>
+                            <span className="box-price__new">{VND.format(item.price)} </span>
+                            <span className="box-price__old">{VND.format(item.priceOld)}</span>
                         </div>
                         <p className="description">{item.description}</p>
 
                         <div className="product__price--percent">
-                            <p className="product__price--percent-detail">Giảm {item.id}%</p>
+                            <p className="product__price--percent-detail">Giảm {item.sale}%</p>
                         </div>
                     </>
                 }

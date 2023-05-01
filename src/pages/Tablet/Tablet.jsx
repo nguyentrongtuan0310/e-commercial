@@ -35,10 +35,9 @@ const Tablet = () => {
         window.addEventListener('scroll', handleScroll);
         //  return () => window.removeEventListener(handleScroll)
     }, []);
-    console.log(listProduct);
+
     return (
         <>
-            <Drawer />
             <div className={styles.content}>
                 <Carousel />
                 <SaleProduct />
@@ -60,7 +59,7 @@ const Tablet = () => {
                 {loadingStatus ? (
                     <SpinIcon />
                 ) : (
-                    listProduct.map((item) => {
+                    listProduct.map((item, i) => {
                         return (
                             <Col
                                 style={{ width: '20%' }}
@@ -68,7 +67,7 @@ const Tablet = () => {
                                 md={{ span: 8 }}
                                 sm={{ span: 12 }}
                                 xs={{ span: 12 }}
-                                key={item.id}
+                                key={i}
                             >
                                 <CardItem item={item} title={item.name} />
                             </Col>

@@ -80,13 +80,13 @@
     border-radius: 5px;
     display: flex;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
-    visibility: visible;
-    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    --webkit-box-orient: vertical;
     overflow: hidden;
-    max-width: 300px;
+    max-height: 40px;
+    line-height: 1.6;
     font-size: 12px;
-    line-height: 1.5;
+
     margin-left: 0;
     overflow: hidden;
     min-height: 50px;

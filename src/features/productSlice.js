@@ -21,12 +21,17 @@ export const fetchWatch = createAsyncThunk('Watch/fetchWatch', async () => {
     const res = await productApi.getWatch();
     return res;
 });
+export const fetchAll = createAsyncThunk('all/fetchAll', async () => {
+    const res = await productApi.getAll();
+    return res;
+});
 
 export const productSlice = createSlice({
     name: 'product',
     initialState: {
         products: [],
         isLoading: false,
+        all: {},
     },
     reducers: {},
     extraReducers: {
@@ -70,6 +75,14 @@ export const productSlice = createSlice({
             state.products = aciton.payload;
         },
         [fetchWatch.rejected]: (state, aciton) => {},
+        [fetchAll.pending]: (state, aciton) => {
+            state.isLoading = true;
+        },
+        [fetchAll.fulfilled]: (state, aciton) => {
+            state.isLoading = false;
+            state.all = aciton.payload;
+        },
+        [fetchAll.rejected]: (state, aciton) => {},
     },
 });
 

@@ -11,9 +11,10 @@ import { CallIcon, CartIcon, CategoryIcon, CheckOrderIcon, LocationIcon, UserIco
 
 import useResize from '../../../hooks/useResize';
 import { ModalApp } from '../../../components/ModalApp';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { openLogin } from '../../../components/ModalApp/ModalAppSLice';
 import { Drawer } from '../../../components/Drawer';
+import { openDrawer } from '../../../components/Drawer/DrawerSlice';
 
 const cx = classNames.bind(styles);
 
@@ -21,7 +22,7 @@ const HeaderApp = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const nameUser = JSON.parse(localStorage.getItem('users'));
-    const count = JSON.parse(localStorage.getItem('quanity'))?.value || 0;
+    const count = useSelector((state) => state.cart.listCart.totalItem);
 
     const handleLogOut = () => {
         localStorage.removeItem('users');
@@ -41,7 +42,7 @@ const HeaderApp = () => {
 
     return (
         <Header>
-            {/* <Drawer /> */}
+            <Drawer />
             <div className={cx('header')}>
                 <ul className={cx('nav')}>
                     {size.width > 768 ? (
@@ -58,7 +59,7 @@ const HeaderApp = () => {
                     )}
 
                     {size.width > 768 && (
-                        <Link to={'/product'} className={cx('header__icon__wrapper')}>
+                        <Link onClick={() => dispatch(openDrawer())} className={cx('header__icon__wrapper')}>
                             <CategoryIcon className={cx('header__icon')} />
                             <p>Danh mục</p>
                         </Link>

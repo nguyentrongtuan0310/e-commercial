@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Col, Row, Tag } from 'antd';
 
-import { fetchSound } from '../../features/productSlice';
+import { fetchPhone } from '../../features/productSlice';
 import { CardItem } from '../../components/CardItem';
 import SpinIcon from '../../components/Spin/SpinIcon';
 import { Category } from '../../components/Category';
-import styles from './Sound.module.scss';
+import styles from './Phone.module.scss';
 import { News } from '../../components/News';
 import { UpOutlined } from '@ant-design/icons';
 import { listCategory, listCategory2, listCategory3, listCategory4, listCategory5, newsList } from './data';
@@ -14,7 +14,7 @@ import { Carousel } from '../../components/Carousel';
 import useResize from '../../hooks/useResize';
 import SaleProduct from '../../components/SaleProduct/SaleProduct';
 import { Drawer } from '../../components/Drawer';
-const Sound = () => {
+const Phone = () => {
     const [show, setShow] = useState(false);
     const listProduct = useSelector((state) => state.products.products);
     const loadingStatus = useSelector((state) => state.products.isLoading);
@@ -22,7 +22,7 @@ const Sound = () => {
     const size = useResize();
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(fetchSound());
+        dispatch(fetchPhone());
     }, []);
     useEffect(() => {
         const handleScroll = () => {
@@ -152,4 +152,4 @@ const Sound = () => {
     );
 };
 
-export default Sound;
+export default Phone;

@@ -63,9 +63,9 @@
 // ___________________-
 .content {
     &__tag {
+        @include flex(space-between, center);
         margin-top: 10px;
         margin-bottom: 10px;
-        @include flex(space-between, center);
         @include responsive(tabletMobie) {
             @include flex(unset, center);
             flex-direction: column;

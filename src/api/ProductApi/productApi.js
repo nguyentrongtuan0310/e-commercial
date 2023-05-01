@@ -2,7 +2,7 @@ import axiosClient from '../axiosClient';
 
 const productApi = {
     getAll(params) {
-        const url = '/';
+        const url = '/all';
         return axiosClient.get(url, { params });
     },
     getPhone(params) {

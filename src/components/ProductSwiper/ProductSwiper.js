@@ -30,6 +30,10 @@ const ProductSwiper = ({ data }) => {
                     // width: 576,
                     slidesPerView: 2,
                 },
+                300: {
+                    // width: 576,
+                    slidesPerView: 1,
+                },
                 576: {
                     // width: 576,
                     slidesPerView: 2,

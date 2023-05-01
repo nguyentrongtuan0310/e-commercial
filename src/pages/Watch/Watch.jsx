@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Col, Row, Tag } from 'antd';
 
-import { fetchTablet } from '../../features/productSlice';
+import { fetchWatch } from '../../features/productSlice';
 import { CardItem } from '../../components/CardItem';
 import SpinIcon from '../../components/Spin/SpinIcon';
 import { Category } from '../../components/Category';
@@ -22,7 +22,7 @@ const Watch = () => {
     const size = useResize();
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(fetchTablet());
+        dispatch(fetchWatch());
     }, []);
     useEffect(() => {
         const handleScroll = () => {
@@ -35,10 +35,9 @@ const Watch = () => {
         window.addEventListener('scroll', handleScroll);
         //  return () => window.removeEventListener(handleScroll)
     }, []);
-    console.log(listProduct);
+
     return (
         <>
-            <Drawer />
             <div className={styles.content}>
                 <Carousel />
                 <SaleProduct />
@@ -60,7 +59,7 @@ const Watch = () => {
                 {loadingStatus ? (
                     <SpinIcon />
                 ) : (
-                    listProduct.map((item) => {
+                    listProduct.map((item, i) => {
                         return (
                             <Col
                                 style={{ width: '20%' }}
@@ -68,7 +67,7 @@ const Watch = () => {
                                 md={{ span: 8 }}
                                 sm={{ span: 12 }}
                                 xs={{ span: 12 }}
-                                key={item.id}
+                                key={i}
                             >
                                 <CardItem item={item} title={item.name} />
                             </Col>

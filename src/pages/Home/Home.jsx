@@ -1,81 +1,46 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Col, Row, Tag } from 'antd';
+import { Col, Row } from 'antd';
 
-import { fetchPhone } from '../../features/productSlice';
-import { CardItem } from '../../components/CardItem';
-import SpinIcon from '../../components/Spin/SpinIcon';
 import { Category } from '../../components/Category';
 import styles from './Home.module.scss';
 import { News } from '../../components/News';
 import { UpOutlined } from '@ant-design/icons';
-import { listCategory, listCategory2, listCategory3, listCategory4, listCategory5, newsList } from './data';
+import { listCategory, listCategory2, listCategory3, listCategory4, listCategory5, listTag, newsList } from './data';
 import { Carousel } from '../../components/Carousel';
 import useResize from '../../hooks/useResize';
 import SaleProduct from '../../components/SaleProduct/SaleProduct';
-import { Drawer } from '../../components/Drawer';
-const Product = () => {
-    const [show, setShow] = useState(false);
-    const listProduct = useSelector((state) => state.products.products);
-    const loadingStatus = useSelector((state) => state.products.isLoading);
-    const tagList = ['Apple', 'Samsung', 'Xiaomi', 'OPPO', 'VIVO', 'Realme', 'Nokia', 'ASUS', 'Tecno', 'Xem tất cả'];
+
+import { fetchAll } from '../../features/productSlice';
+import PhoneItem from './ProductItem/PhoneItem';
+import LaptopItem from './ProductItem/LaptopItem';
+import TabletItem from './ProductItem/TabletItem';
+import SoundItem from './ProductItem/SoundItem';
+import WatchItem from './ProductItem/WatchItem';
+import BackToTop from '../../components/BackToTop/BackToTop';
+import MenuBottom from '../../components/MenuBottom/MenuBottom';
+const Home = () => {
     const size = useResize();
+    const listProduct = useSelector((state) => state.products.all);
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(fetchPhone());
+        dispatch(fetchAll());
     }, []);
-    useEffect(() => {
-        const handleScroll = () => {
-            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-                setShow(true);
-            } else {
-                setShow(false);
-            }
-        };
-        window.addEventListener('scroll', handleScroll);
-        //  return () => window.removeEventListener(handleScroll)
-    }, []);
-    console.log(listProduct);
+
     return (
         <>
-            <Drawer />
+            {size.width < 1023 ? <MenuBottom /> : null}
             <div className={styles.content}>
                 <Carousel />
                 <SaleProduct />
-                <div className={styles.content__tag}>
-                    <div className={styles.content__tag__title}>
-                        <h2>SẢN PHẨM NỔI BẬT</h2>
-                        {size.width < 567 && <p className={styles.content__tag__title__text}>Xem tất cả</p>}
-                    </div>
-                    <div className={styles.content__tag__list}>
-                        {tagList.map((item, i) => (
-                            <Tag className={styles.content__tag__item} key={i}>
-                                {item}
-                            </Tag>
-                        ))}
-                    </div>
-                </div>
+
+                <PhoneItem data={listTag[0]} listProduct={listProduct.phone || []} />
+                <LaptopItem data={listTag[1]} listProduct={listProduct.laptop || []} />
+                <TabletItem data={listTag[2]} listProduct={listProduct.tablet || []} />
+                <SoundItem data={listTag[3]} listProduct={listProduct.sound || []} />
+                <WatchItem data={listTag[4]} listProduct={listProduct.watch || []} />
             </div>
-            <Row gutter={[12, 12]} style={{ marginBottom: '20px' }}>
-                {loadingStatus ? (
-                    <SpinIcon />
-                ) : (
-                    listProduct.map((item) => {
-                        return (
-                            <Col
-                                style={{ width: '20%' }}
-                                lg={{ span: 6 }}
-                                md={{ span: 8 }}
-                                sm={{ span: 12 }}
-                                xs={{ span: 12 }}
-                                key={item.id}
-                            >
-                                <CardItem item={item} title={item.name} />
-                            </Col>
-                        );
-                    })
-                )}
-            </Row>
+
             <div className={styles.category}>
                 <h2 className={styles.category__title}>PHỤ KIỆN</h2>
                 <Row gutter={[12, 12]}>
@@ -143,14 +108,10 @@ const Product = () => {
                     ))}
                 </Row>
             </div>
-            {show && (
-                <button className={styles.back__to__top} onClick={() => window.scrollTo(0, 0)}>
-                    <UpOutlined className={styles.back__to__top__icon} />
-                    <strong>Lên đầu</strong>
-                </button>
-            )}
+
+            <BackToTop />
         </>
     );
 };
 
-export default Product;
+export default Home;

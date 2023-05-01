@@ -6,6 +6,8 @@ import { UserOutlined } from '@ant-design/icons';
 import { useDispatch } from 'react-redux';
 import { openLogin } from '../ModalApp/ModalAppSLice';
 import useNotification from 'antd/es/notification/useNotification';
+import { openDrawer } from '../Drawer/DrawerSlice';
+
 const MenuBottom = () => {
     const users = JSON.parse(localStorage.getItem('users'));
     const navigate = useNavigate();
@@ -29,6 +31,7 @@ const MenuBottom = () => {
             dispatch(openLogin());
         }
     };
+
     return (
         <div className="menu__md">
             <ul className="menu__md__list">
@@ -36,7 +39,7 @@ const MenuBottom = () => {
                     <HomeIcon className="menu__md__item__icon" />
                     <span className="menu__md__item__text">Trang chủ</span>
                 </NavLink>
-                <NavLink to="/product" className={navLinkClass}>
+                <NavLink to="/phone" className={navLinkClass} onClick={() => dispatch(openDrawer())}>
                     <CategoryIcon className="menu__md__item__icon" />
                     <span className="menu__md__item__text">Danh mục</span>
                 </NavLink>

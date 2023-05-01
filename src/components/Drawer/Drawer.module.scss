@@ -7,11 +7,16 @@
     right: 0;
     background: rgba(0, 0, 0, 0.53);
     z-index: 10;
+    display: none;
+    animation: supportanimation 0.5s cubic-bezier(0.82, 0.085, 0.395, 0.895);
+
     &__info {
         @include flex(space-between, center);
         margin-top: 10px;
         padding: 0 10px;
         &__name {
+            height: 40px;
+
             @include flex(unset, center);
             span {
                 font-size: 16px;
@@ -27,7 +32,8 @@
             border-radius: 50%;
         }
         &__icon {
-            font-size: 14px;
+            cursor: pointer;
+            font-size: 16px;
         }
     }
     &__content {
@@ -38,6 +44,7 @@
         width: 300px;
         background-color: #fff;
         height: 100vh;
+        animation: supportanimation 0.5s ease-in-out;
     }
     &__list {
         margin-top: 20px;
@@ -50,11 +57,20 @@
         font-weight: 700;
         margin-bottom: 10px;
         padding: 6px 10px;
+        height: 40px;
         cursor: pointer;
-
+        &.active {
+            color: $primary-color;
+            &:hover {
+                background: #f3f4f6;
+                border-radius: 5px;
+                color: $primary-color;
+            }
+        }
         &:hover {
             background: #f3f4f6;
             border-radius: 5px;
+            color: #343a40;
         }
         &__img {
             background: url("https://cellphones.com.vn/media/icons/menu/icon-cps-3.svg") center no-repeat;
@@ -64,4 +80,17 @@
             margin-right: 4px;
         }
     }
+}
+@keyframes supportanimation {
+    from {
+        left: -300px;
+        opacity: 0;
+    }
+    to {
+        left: 0;
+        opacity: 1;
+    }
+}
+.visible {
+    display: block;
 }

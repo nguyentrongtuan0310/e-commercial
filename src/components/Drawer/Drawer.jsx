@@ -1,40 +1,59 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import styles from './Drawer.module.scss';
 import DrawerItem from './DrawerItem';
-import { SettingOutlined } from '@ant-design/icons';
+import { CloseOutlined } from '@ant-design/icons';
+import { useDispatch, useSelector } from 'react-redux';
+import { closeDrawer } from './DrawerSlice';
+const data = [
+    {
+        id: 1,
+        name: 'Điện thoại',
+        link: 'https://cellphones.com.vn/media/icons/menu/icon-cps-3.svg',
+        to: '/phone',
+    },
+    {
+        id: 2,
+        name: 'Laptop',
+        link: 'https://cdn2.cellphones.com.vn/x/media/icons/menu/icon-cps-380.svg',
+        to: '/laptop',
+    },
+    {
+        id: 5,
+        name: 'Tablet',
+        link: 'https://cellphones.com.vn/media/icons/menu/icon-cps-4.svg',
+        to: '/tablet',
+    },
+    {
+        id: 3,
+        name: 'Âm thanh ',
+        link: 'https://cellphones.com.vn/media/icons/menu/icon-cps-220.svg',
 
+        to: '/sound',
+    },
+    {
+        id: 4,
+        name: 'Đồng hồ',
+        link: 'https://cellphones.com.vn/media/icons/menu/icon-cps-610.svg',
+        to: '/watch',
+    },
+];
 const Drawer = () => {
-    const data = [
-        {
-            id: 1,
-            name: 'Điện thoại',
-            link: 'https://cellphones.com.vn/media/icons/menu/icon-cps-3.svg',
-        },
-        {
-            id: 2,
-            name: 'Laptop',
-            link: 'https://cdn2.cellphones.com.vn/x/media/icons/menu/icon-cps-380.svg',
-        },
-        {
-            id: 5,
-            name: 'Tablet',
-            link: 'https://cellphones.com.vn/media/icons/menu/icon-cps-4.svg',
-        },
-        {
-            id: 3,
-            name: 'Âm thanh ',
-            link: 'https://cellphones.com.vn/media/icons/menu/icon-cps-220.svg',
-        },
-        {
-            id: 4,
-            name: 'Đồng hồ',
-            link: 'https://cellphones.com.vn/media/icons/menu/icon-cps-610.svg',
-        },
-    ];
+    const isShowDrawer = useSelector((state) => state.drawer.isShowDrawer);
+    const user = JSON.parse(localStorage.getItem('users'));
+    const drawerRef = useRef();
+    const dispatch = useDispatch();
+    useEffect(() => {
+        if (isShowDrawer) {
+            drawerRef.current.classList.add(styles.visible);
+        } else {
+            drawerRef.current.classList.remove(styles.visible);
+        }
+    }, [isShowDrawer]);
+
     return (
-        <div className={styles.drawer}>
-            <div className={styles.drawer__content}>
+        <div className={styles.drawer} ref={drawerRef} onClick={() => dispatch(closeDrawer())}>
+            <div className={styles.drawer__content} onClick={(e) => e.stopPropagation()}>
                 <div className={styles.drawer__info}>
                     <div className={styles.drawer__info__name}>
                         <img
@@ -42,9 +61,9 @@ const Drawer = () => {
                             className={styles.drawer__info__img}
                             alt="f8"
                         />
-                        <span>Nguyễn Trọng Tuấn</span>
+                        <span>{user ? user.user.name : 'No login'}</span>
                     </div>
-                    <SettingOutlined className={styles.drawer__info__icon} />
+                    <CloseOutlined className={styles.drawer__info__icon} onClick={() => dispatch(closeDrawer())} />
                 </div>
                 <ul className={styles.drawer__list}>
                     {data.map((item) => (

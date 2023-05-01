@@ -259,40 +259,4 @@ const newsList = [
         name: 'Tự nâng cấp SSD M.2 cho PC? Còn dễ hơn cả ăn bánh',
     },
 ];
-const listTag = [
-    {
-        id: 1,
-        title: 'ĐIỆN THOẠI NỔI BẬT NHẤT',
-        tagList: ['Apple', 'Samsung', 'Xiaomi', 'OPPO', 'VIVO', 'Realme', 'Nokia', 'ASUS', 'Tecno', 'Xem tất cả'],
-    },
-    {
-        id: 2,
-        title: 'LAPTOP',
-        tagList: ['Macbook', 'Thinkpad', 'Asus', 'HP', 'Surface', 'Acer', 'MSi', 'Dell', 'Xem tất cả'],
-    },
-    {
-        id: 3,
-        title: 'MÁY TÍNH BẢNG',
-        tagList: ['iPad 10.9 inch 2022', 'iPad Air', 'iPad Pro', 'Lenovo', 'Samsung', 'Xiaomi', 'Xem tất cả'],
-    },
-    {
-        id: 4,
-        title: 'ÂM THANH',
-        tagList: [
-            'Tai nghe BlueTooth',
-            'Tai nghe không dây',
-            'Tai nghe Gaming',
-            'Tai nghe chụp tai',
-            'Loa Bluetooth',
-            'Loa Karaoke',
-            'Loa Soundbar',
-            'Xem tất cả',
-        ],
-    },
-    {
-        id: 5,
-        title: 'ĐỒNG HỒ THÔNG MINH',
-        tagList: ['Apple Watch', 'Samsung', 'Huawei', 'Gamin', 'Xiaomi', 'Amazfit', 'Xem tất cả'],
-    },
-];
-export { listCategory, listCategory2, listCategory3, listCategory4, listCategory5, newsList, listTag };
+export { listCategory, listCategory2, listCategory3, listCategory4, listCategory5, newsList };

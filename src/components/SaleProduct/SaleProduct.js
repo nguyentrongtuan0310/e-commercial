@@ -1,10 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './SaleProduct.scss';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { ProductSwiper } from '../ProductSwiper';
+import { fetchPhone } from '../../features/productSlice';
 
 const SaleProduct = () => {
     const data = useSelector((state) => state.products.products);
@@ -12,7 +13,7 @@ const SaleProduct = () => {
     const [second, setSecond] = useState('');
     const [hour, setHour] = useState('');
     const [minute, setMinute] = useState('');
-
+    const dispatch = useDispatch();
     const date = new Date();
     useEffect(() => {
         setDay(date.getDay());
@@ -20,7 +21,9 @@ const SaleProduct = () => {
         setHour(date.getHours());
         setMinute(date.getMinutes());
     }, []);
-
+    useEffect(() => {
+        dispatch(fetchPhone());
+    }, []);
     return (
         <div className="sale">
             <div className="sale__title">

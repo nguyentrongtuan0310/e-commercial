@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import { SearchOutlined } from '@ant-design/icons';
 
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import styles from './HeaderApp.module.scss';
 import { Avatar, Popover } from 'antd';
 
 import { Header } from 'antd/es/layout/layout';
 import { CallIcon, CartIcon, CategoryIcon, CheckOrderIcon, LocationIcon, UserIcon } from '../../../components/Icon';
-
+import { Drawer } from '../../../components/Drawer';
 import useResize from '../../../hooks/useResize';
 import { ModalApp } from '../../../components/ModalApp';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { openLogin } from '../../../components/ModalApp/ModalAppSLice';
-import { Drawer } from '../../../components/Drawer';
+import { openDrawer } from '../../../components/Drawer/DrawerSlice';
 
 const cx = classNames.bind(styles);
 
@@ -21,8 +21,8 @@ const HeaderApp = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const nameUser = JSON.parse(localStorage.getItem('users'));
-    const count = JSON.parse(localStorage.getItem('quanity'))?.value || 0;
-
+    const count = useSelector((state) => state.cart.listCart.totalItem);
+    const { id } = useParams();
     const handleLogOut = () => {
         localStorage.removeItem('users');
         navigate('/');
@@ -38,10 +38,13 @@ const HeaderApp = () => {
         </div>
     );
     const size = useResize();
-
+    const handleNavigate = () => {
+        navigate('/cart');
+    };
+    console.log(count);
     return (
         <Header>
-            {/* <Drawer /> */}
+            <Drawer />
             <div className={cx('header')}>
                 <ul className={cx('nav')}>
                     {size.width > 768 ? (
@@ -58,7 +61,7 @@ const HeaderApp = () => {
                     )}
 
                     {size.width > 768 && (
-                        <Link to={'/product'} className={cx('header__icon__wrapper')}>
+                        <Link onClick={() => dispatch(openDrawer())} className={cx('header__icon__wrapper')}>
                             <CategoryIcon className={cx('header__icon')} />
                             <p>Danh mục</p>
                         </Link>
@@ -134,7 +137,7 @@ const HeaderApp = () => {
                 )}
 
                 <span className={cx('header__right')}>
-                    <div className={cx('header__right__icon__wrapper')} onClick={() => navigate('/cart')}>
+                    <div className={cx('header__right__icon__wrapper')} onClick={handleNavigate}>
                         <div className={cx('header__right__icon')}>
                             <CartIcon className={cx('header__icon')} />
                             <span>{count}</span>
